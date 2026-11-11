@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#ffffff"/>
+  <!-- La maison du logo TDS Fermetures. -->
+  <path d="M12 54 V27 L32 12 L52 27 V54 H12" fill="none" stroke="#F39200" stroke-width="6" stroke-linejoin="miter"/>
+  <text x="32" y="48" text-anchor="middle" textLength="30" lengthAdjust="spacingAndGlyphs"
+        font-family="'Arial Black',Impact,system-ui,sans-serif" font-weight="900" font-size="17" fill="#3C3C3B">TDS</text>
+</svg>

@@ -1,0 +1,343 @@
+{
+  "marque": {
+    "nom": "TDS Fermetures"
+  },
+  "hero": {
+    "surtitre": "Dijon et Côte-d'Or · Portes · Fenêtres · Volets · Portails",
+    "titre_1": "Vos fermetures,",
+    "titre_2": "posées avec soin.",
+    "texte": "Fenêtres, volets roulants, portes, portails et clôtures, portes de garage, pergolas, automatismes et visiophones, à Dijon et dans toute la Côte-d'Or. Un seul interlocuteur, du premier conseil au service après-vente.",
+    "photos": [
+      {
+        "image": "assets/images/realisation-portail-coulissant.jpg",
+        "alt": "Portail coulissant anthracite à lames verticales posé par TDS Fermetures devant une maison contemporaine",
+        "legende": "Portail coulissant — réalisation TDS Fermetures",
+        "credit": "",
+        "cadrage": "66% 50%"
+      },
+      {
+        "image": "assets/images/fenetre-facade-grise.jpg",
+        "alt": "Façade grise, fenêtres blanches et volets battants anthracite",
+        "legende": "Fenêtres et volets battants",
+        "credit": "Photo FenêtréA"
+      },
+      {
+        "image": "assets/images/baie-coulissante-terrasse.jpg",
+        "alt": "Grande baie coulissante ouverte sur une terrasse",
+        "legende": "Baie coulissante",
+        "credit": "Photo FenêtréA"
+      },
+      {
+        "image": "assets/images/porte-grise-vitrage.jpg",
+        "alt": "Porte d'entrée grise à vitrage ondulé, vue depuis l'intérieur",
+        "legende": "Porte d'entrée",
+        "credit": "Photo FenêtréA"
+      }
+    ]
+  },
+  "cartouche": {
+    "dirigeant": "Tiago Dos Santos",
+    "metier": "Fermetures & automatismes",
+    "sav": "SAV réactif"
+  },
+  "images": {
+    "entreprise": "assets/logo/tds-fermetures.svg"
+  },
+  "engagements": [
+    {
+      "titre": "Accompagnement",
+      "texte": "Conseils sur le choix des produits, les dimensions et les options, avant de chiffrer quoi que ce soit."
+    },
+    {
+      "titre": "Qualité",
+      "texte": "Un devis détaillé qui dit précisément ce qui est posé : modèle, dimensions et options."
+    },
+    {
+      "titre": "Pose soignée",
+      "texte": "Prise de cotes, pose, réglages et finitions faits proprement, chantier laissé net."
+    },
+    {
+      "titre": "SAV réactif",
+      "texte": "Un réglage, une panne de motorisation, une question : un seul numéro à appeler."
+    }
+  ],
+  "prestations": {
+    "titre": "Tout ce qui ferme la maison",
+    "texte": "Des fenêtres au portail, de la porte d'entrée à la porte de garage, jusqu'aux automatismes et visiophones qui les commandent.",
+    "liste": [
+      {
+        "titre": "Fenêtres",
+        "texte": "Fenêtres et portes-fenêtres, en rénovation ou en neuf. Prise de cotes, pose, étanchéité et réglages."
+      },
+      {
+        "titre": "Volets roulants",
+        "texte": "Manuels ou motorisés, en rénovation sur fenêtre existante ou avec une menuiserie neuve."
+      },
+      {
+        "titre": "Portes",
+        "texte": "Portes d'entrée et de service : choix du modèle, pose, réglage de la fermeture."
+      },
+      {
+        "titre": "Portails & clôtures",
+        "texte": "Portails battants ou coulissants, portillons et clôtures, avec ou sans motorisation."
+      },
+      {
+        "titre": "Portes de garage",
+        "texte": "Sectionnelles, enroulables ou battantes, motorisées avec télécommande."
+      },
+      {
+        "titre": "Pergolas",
+        "texte": "Pour abriter une terrasse : étude de l'emplacement, des dimensions et des options."
+      },
+      {
+        "titre": "Automatismes",
+        "texte": "Motorisation de portails, de portes de garage et de volets, télécommandes et commandes centralisées."
+      },
+      {
+        "titre": "Visiophones",
+        "texte": "Voir qui sonne, lui parler et ouvrir le portail à distance."
+      }
+    ]
+  },
+  "chantiers": {
+    "titre": "Fenêtres, baies et portes d'entrée",
+    "texte": "Un aperçu des produits : formes, coloris, vitrages et poignées. Le modèle, les dimensions et les options se choisissent ensemble, au moment du devis.",
+    "ouvrages": [
+      {
+        "titre": "Portail coulissant",
+        "meta": "Réalisation TDS Fermetures",
+        "categorie": "exterieur",
+        "image": "assets/images/realisation-portail-coulissant-960.jpg",
+        "alt": "Portail coulissant anthracite à lames verticales posé par TDS Fermetures",
+        "credit": "Réalisation TDS Fermetures",
+        "cadrage": "66% 50%",
+        "format": "paysage"
+      },
+      {
+        "titre": "Fenêtres et volets battants",
+        "meta": "Façade",
+        "categorie": "fermetures",
+        "image": "assets/images/fenetre-facade-grise.jpg",
+        "alt": "Façade grise, fenêtres blanches et volets battants anthracite",
+        "credit": "Photo FenêtréA",
+        "format": "portrait"
+      },
+      {
+        "titre": "Baie coulissante",
+        "meta": "Ouverture sur terrasse",
+        "categorie": "coulissants",
+        "image": "assets/images/baie-coulissante-terrasse.jpg",
+        "alt": "Grande baie coulissante ouverte sur une terrasse fleurie",
+        "credit": "Photo FenêtréA",
+        "format": "portrait"
+      },
+      {
+        "titre": "Fenêtre",
+        "meta": "Chambre sous combles",
+        "categorie": "fermetures",
+        "image": "assets/images/fenetre-chambre.jpg",
+        "alt": "Fenêtre à cadre noir dans une chambre sous combles",
+        "credit": "Photo FenêtréA",
+        "format": "paysage"
+      },
+      {
+        "titre": "Porte d'entrée",
+        "meta": "Rouge · vitrage décoratif",
+        "categorie": "portes",
+        "image": "assets/images/porte-rouge.jpg",
+        "alt": "Porte d'entrée rouge avec vitrage décoratif, vue depuis l'intérieur",
+        "credit": "Photo FenêtréA",
+        "format": "portrait"
+      },
+      {
+        "titre": "Fenêtre",
+        "meta": "Cuisine",
+        "categorie": "fermetures",
+        "image": "assets/images/fenetre-cuisine.jpg",
+        "alt": "Fenêtre à cadre noir au-dessus d'un îlot de cuisine",
+        "credit": "Photo FenêtréA",
+        "format": "portrait"
+      },
+      {
+        "titre": "Porte d'entrée",
+        "meta": "Grise · poignée inox",
+        "categorie": "portes",
+        "image": "assets/images/porte-grise-inox.jpg",
+        "alt": "Porte d'entrée grise avec longue poignée inox, entrée de maison contemporaine",
+        "credit": "Photo FenêtréA",
+        "format": "paysage"
+      },
+      {
+        "titre": "Baie coulissante",
+        "meta": "Séjour lumineux",
+        "categorie": "coulissants",
+        "image": "assets/images/baie-coulissante-sejour.jpg",
+        "alt": "Baie coulissante blanche entre un séjour lumineux et le jardin",
+        "credit": "Photo FenêtréA",
+        "format": "portrait"
+      },
+      {
+        "titre": "Porte d'entrée",
+        "meta": "Bleue · inserts vitrés",
+        "categorie": "portes",
+        "image": "assets/images/porte-bleue.jpg",
+        "alt": "Porte d'entrée bleue à petits inserts vitrés, façade en pierre",
+        "credit": "Photo FenêtréA",
+        "format": "portrait"
+      },
+      {
+        "titre": "Fenêtre",
+        "meta": "Volets battants",
+        "categorie": "fermetures",
+        "image": "assets/images/fenetre-facade-volets.jpg",
+        "alt": "Fenêtre blanche encadrée de volets battants verts sur une façade claire",
+        "credit": "Photo FenêtréA",
+        "format": "paysage"
+      },
+      {
+        "titre": "Porte d'entrée",
+        "meta": "Grise · vitrage ondulé",
+        "categorie": "portes",
+        "image": "assets/images/porte-grise-vitrage.jpg",
+        "alt": "Porte d'entrée grise à vitrage ondulé, vue depuis l'intérieur",
+        "credit": "Photo FenêtréA",
+        "format": "portrait"
+      },
+      {
+        "titre": "Baie coulissante",
+        "meta": "Détail de la poignée",
+        "categorie": "coulissants",
+        "image": "assets/images/baie-coulissante-poignee.jpg",
+        "alt": "Gros plan sur la poignée blanche d'une baie coulissante",
+        "credit": "Photo FenêtréA",
+        "format": "portrait"
+      },
+      {
+        "titre": "Porte d'entrée",
+        "meta": "Anthracite · bardage bois",
+        "categorie": "portes",
+        "image": "assets/images/porte-anthracite-bois.jpg",
+        "alt": "Porte d'entrée anthracite entre deux pans de bardage bois",
+        "credit": "Photo FenêtréA",
+        "format": "paysage"
+      }
+    ],
+    "mention": "Portail coulissant : réalisation TDS Fermetures. Autres photos : FenêtréA, fabricant — modèles présentés à titre d'exemple."
+  },
+  "aides": {
+    "titre": "Une TVA réduite sur vos travaux",
+    "texte": "Dans un logement achevé depuis plus de deux ans, la fourniture et la pose peuvent être facturées à 10 % ou à 5,5 % au lieu de 20 %. Le taux retenu pour votre chantier figure sur le devis.",
+    "dispositifs": [
+      {
+        "sigle": "TVA 20 %",
+        "titre": "Construction neuve et autres cas",
+        "texte": "Le taux normal de 20 % s'applique notamment aux travaux réalisés dans une construction neuve, un logement achevé depuis moins de deux ans, un local professionnel, ainsi qu'aux produits vendus sans pose."
+      },
+      {
+        "sigle": "TVA 10 %",
+        "titre": "Amélioration et entretien",
+        "texte": "Remplacement ou pose dans un logement achevé depuis plus de deux ans, produits fournis et posés par l'entreprise."
+      },
+      {
+        "sigle": "TVA 5,5 %",
+        "titre": "Rénovation énergétique",
+        "texte": "Même logement, en remplacement de fenêtres ou portes-fenêtres existantes, avec des produits qui atteignent les performances thermiques exigées (voir ci‑dessous)."
+      },
+      {
+        "sigle": "Primes et éco‑PTZ",
+        "titre": "Réservés aux entreprises RGE",
+        "texte": "MaPrimeRénov', primes CEE et éco‑PTZ exigent une entreprise qualifiée RGE, ce que TDS Fermetures n'est pas à ce jour."
+      }
+    ],
+    "qualification": "TDS Fermetures n'est pas qualifiée RGE. Les taux de TVA réduits ne l'exigent pas : ils dépendent de l'âge du logement, de la nature des travaux et des produits posés.",
+    "mention": "Taux et conditions fixés par la loi, susceptibles d'évoluer : le devis précise le taux applicable après vérification. Pour les aides à la rénovation, le service public France Rénov' vous renseigne gratuitement (france-renov.gouv.fr, 0 808 800 700)."
+  },
+  "entreprise": {
+    "titre": "Un seul interlocuteur",
+    "paragraphe_1": "TDS Fermetures, c'est Tiago Dos Santos. C'est lui que vous appelez pour un conseil, un devis ou le service après-vente — pas un standard.",
+    "paragraphe_2": "Basée à Dijon, TDS Fermetures intervient dans toute la Côte-d'Or, avec la même exigence de pose pour chaque porte, fenêtre, volet ou portail."
+  },
+  "processus": {
+    "titre": "Comment ça se passe",
+    "etapes": [
+      {
+        "titre": "Premier contact",
+        "texte": "Par téléphone ou avec le formulaire : vous décrivez votre projet."
+      },
+      {
+        "titre": "Visite et conseils",
+        "texte": "Prise de cotes sur place et choix des produits, des coloris et des options."
+      },
+      {
+        "titre": "Devis détaillé",
+        "texte": "Fourniture, pose et options chiffrées séparément, pour savoir ce que vous payez."
+      },
+      {
+        "titre": "Pose et suivi",
+        "texte": "Pose, mise en service des automatismes, explications, puis SAV si besoin."
+      }
+    ]
+  },
+  "devis": {
+    "titre": "Votre demande de devis",
+    "texte": "Quatre étapes, deux minutes. Le site rédige votre demande, puis vous l'envoyez à TDS Fermetures depuis votre messagerie.",
+    "email_reception": "tiagotdsfermetures.21@hotmail.com",
+    "aparte_titre": "Ce qui vous attend",
+    "garanties": [
+      {
+        "titre": "Un vrai échange.",
+        "texte": "Vos besoins d'abord, les produits ensuite."
+      },
+      {
+        "titre": "Une visite sur place.",
+        "texte": "Pour prendre les cotes exactes avant de chiffrer."
+      },
+      {
+        "titre": "Un devis détaillé.",
+        "texte": "Fourniture, pose et options séparées."
+      },
+      {
+        "titre": "Un SAV réactif.",
+        "texte": "Le même numéro après la pose."
+      }
+    ]
+  },
+  "avis_titre": "Ce qu'en disent les clients",
+  "avis": [],
+  "avis_note": "Avis recueillis auprès de clients réels — source indiquée sous chaque avis.",
+  "infos": {
+    "titre": "Nous joindre",
+    "telephone": "06 58 00 82 26",
+    "email": "tiagotdsfermetures.21@hotmail.com",
+    "email_fournisseurs": "sarltdsfermetures.21@hotmail.com",
+    "adresse_1": "24 rue Lavoisier",
+    "adresse_2": "21000 Dijon",
+    "horaires": [
+      {
+        "jours": "Horaires",
+        "horaire": "Sur rendez-vous"
+      }
+    ],
+    "zones": [
+      "Côte-d'Or (21)"
+    ]
+  },
+  "pied": {
+    "texte": "Porte, fenêtre, volet, portail, automatisme, visiophone. Accompagnement, qualité, pose soignée, SAV réactif.",
+    "reseaux": [
+      {
+        "nom": "Facebook : TDS Fermetures",
+        "url": "https://www.facebook.com/share/19ZKpWqVXY/"
+      }
+    ]
+  },
+  "realisation": {
+    "titre": "Un portail coulissant, posé par Tiago Dos Santos",
+    "texte": "Lames verticales pleines, teinte anthracite, coulissement le long du mur : un portail sobre qui ferme la propriété sans alourdir la façade.",
+    "image": "assets/images/realisation-portail-coulissant.jpg",
+    "alt": "Portail coulissant anthracite à lames verticales posé par TDS Fermetures devant une maison contemporaine",
+    "legende": "Portail coulissant anthracite",
+    "etiquette": "Réalisation TDS Fermetures",
+    "cadre": "52.5 45.9 27.3 21.1"
+  }
+}

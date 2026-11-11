@@ -1,0 +1,1071 @@
+/* =========================================================================
+   TDS FERMETURES — portes, fenêtres, volets, portails, automatismes
+   Direction artistique : l'orange de la marque, sur blanc et anthracite,
+   comme la carte de visite. L'orange porte les actions et les repères ;
+   l'anthracite, le texte et les grands aplats.
+   Aucune dépendance, aucune police externe.
+   ========================================================================= */
+
+:root {
+  /* ---- Fonds ---- */
+  --papier: #f7f7f5;
+  --papier-2: #efefec;
+  --papier-3: #e4e4e0;
+  --encre: #232322;           /* anthracite du logo, assombri pour les aplats */
+  --encre-2: #2c2c2b;
+  --encre-3: #3a3a38;
+
+  /* ---- Orange TDS (les noms de variables sont restés ceux du gabarit) ---- */
+  --bois: #F39200;            /* orange de la marque : fonds, boutons, traits */
+  --bois-clair: #FFB54D;
+  --bois-texte: #A85200;      /* orange lisible en texte sur fond clair (5:1) */
+  --bois-sur-encre: #F39200;  /* orange lisible sur anthracite (6,7:1) */
+  --orange-voile: rgba(243, 146, 0, 0.14);
+
+  /* ---- Repères ---- */
+  --plan: #3C3C3B;
+  --plan-texte: #A85200;
+  --plan-sur-encre: #F7A534;
+
+  /* ---- Texte ---- */
+  --texte: var(--encre);
+  --texte-doux: #5a5a57;
+  --texte-sur-encre: #ededea;
+  --texte-doux-sur-encre: #b3b3ae;
+
+  --ligne: #dcdcd7;
+  --ligne-encre: #3f3f3d;
+
+  /* ---- Typographie ---- */
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* ---- Rythme ---- */
+  --gouttiere: 24px;
+  --largeur: 1180px;
+  --largeur-large: 1440px;
+  --rayon: 4px;               /* presque droit, comme un dormant */
+
+  --transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Masque les sections que le CMS ne remplit pas (voir assets/js/content.js).
+   Prioritaire sur les règles de mise en page qui imposent un display. */
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--texte);
+  font-family: var(--font-texte);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.028em;
+  line-height: 1.08;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); }
+h2 { font-size: clamp(1.9rem, 4.2vw, 3.1rem); }
+h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); letter-spacing: -0.018em; }
+p { margin: 0 0 1.1em; }
+a { color: inherit; }
+
+::selection { background: var(--bois); color: #fff; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 999;
+  background: var(--encre); color: var(--papier);
+  padding: 14px 22px; font-family: var(--font-mono); font-size: 0.85rem;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible { outline: 2px solid var(--plan); outline-offset: 3px; }
+/* Sur les fonds anthracite, le contour passe à l'orange clair (7,8:1). */
+.hero :focus-visible, .entete:not(.est-pose) :focus-visible, .section--encre :focus-visible,
+.pied :focus-visible, .menu-mobile :focus-visible, .visionneuse :focus-visible,
+.appel-mobile :focus-visible { outline-color: var(--plan-sur-encre); }
+
+/* =========================================================================
+   MISE EN PAGE
+   ========================================================================= */
+
+.wrap { width: 100%; max-width: var(--largeur); margin: 0 auto; padding: 0 var(--gouttiere); }
+.wrap-large { width: 100%; max-width: var(--largeur-large); margin: 0 auto; padding: 0 var(--gouttiere); }
+
+.section { padding: clamp(72px, 11vh, 132px) 0; position: relative; }
+/* L'en-tête est fixe : sans cette marge, un lien d'ancre amènerait le titre
+   de section juste dessous, à moitié caché. */
+/* Ancres et éléments focalisés : jamais sous l'en-tête fixe (ni, sur
+   téléphone, sous la barre d'appel). */
+html { scroll-padding-top: 96px; }
+.section--encre { background: var(--encre); color: var(--texte-sur-encre); }
+.section--encre h1, .section--encre h2, .section--encre h3 { color: var(--papier); }
+.section--encre p { color: var(--texte-doux-sur-encre); }
+.section--papier2 { background: var(--papier-2); }
+
+/* Annotation technique — la signature typographique du template. */
+.annot {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 0.73rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--plan-texte);
+  margin: 0 0 18px;
+}
+.annot::before {
+  content: ""; width: 26px; height: 1px; background: currentColor; flex: none;
+}
+.section--encre .annot { color: var(--plan-sur-encre); }
+
+.tete { max-width: 660px; margin-bottom: clamp(38px, 6vw, 62px); }
+.tete--centre { margin-left: auto; margin-right: auto; text-align: center; }
+.tete--centre .annot { justify-content: center; }
+.tete p { color: var(--texte-doux); font-size: 1.06rem; }
+.section--encre .tete p { color: var(--texte-doux-sur-encre); }
+
+/* Grille de plan, en fond des sections sombres. */
+.grille-plan {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
+  background-image:
+    linear-gradient(to right, rgba(243, 146, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(243, 146, 0, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 78%);
+}
+
+/* =========================================================================
+   BOUTONS
+   ========================================================================= */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 0.78rem;
+  letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+  padding: 15px 28px; border-radius: var(--rayon);
+  border: 1px solid var(--encre); background: transparent; color: var(--encre);
+  text-decoration: none; cursor: pointer; text-align: center;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform 0.2s;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--plein { background: var(--bois); border-color: var(--bois); color: var(--encre); }
+
+.btn--clair { border-color: rgba(247, 247, 245, 0.5); color: var(--papier); }
+
+/* Survols réservés aux appareils qui survolent : au doigt, l'état de
+   survol resterait « collé » après un toucher. Le bouton orange s'éclaircit
+   au lieu de passer à l'anthracite, qui se confondait avec les fonds sombres. */
+@media (hover: hover) {
+  .btn:hover { background: var(--encre); color: var(--papier); }
+  .btn--plein:hover { background: var(--bois-clair); border-color: var(--bois-clair); color: var(--encre); }
+  .btn--clair:hover { background: var(--papier); border-color: var(--papier); color: var(--encre); }
+  /* Après .btn:hover, sur lequel ils doivent l'emporter. */
+  .section--encre .btn:not(.btn--plein):not(.btn--clair):hover { background: var(--papier); color: var(--encre); }
+  .btn--sombre:hover { background: #000; border-color: #000; }
+  .hero__jauge button:hover::before { background: var(--texte-doux-sur-encre); }
+  .hero__pause:hover { border-color: var(--bois-sur-encre); color: var(--papier); }
+  .metier:hover { border-color: var(--bois); box-shadow: 0 24px 48px -22px rgba(35, 35, 34, 0.35); }
+  .filtre:hover { border-color: var(--encre); color: var(--encre); }
+  .oeuvre:hover::after { width: 100%; }
+  .oeuvre:hover img { transform: scale(1.06); }
+  .choix label:hover { border-color: var(--bois-sur-encre); }
+  .visionneuse__fermer:hover, .visionneuse__nav:hover { background: rgba(237, 237, 234, 0.12); border-color: var(--papier); }
+}
+
+.btn--sm { padding: 11px 19px; font-size: 0.72rem; }
+
+/* Sur fond anthracite, le bouton simple passe en clair — sinon « Précédent »
+   (formulaire de devis) serait invisible. */
+.section--encre .btn:not(.btn--plein):not(.btn--clair) { border-color: rgba(247, 247, 245, 0.5); color: var(--papier); }
+
+/* =========================================================================
+   EN-TÊTE
+   ========================================================================= */
+
+/* Fluidité : l'en-tête garde la même taille quand il se pose. Seuls la
+   couleur de fond, le filet (ombre portée) et l'échelle du logo changent :
+   aucune de ces propriétés ne refait la mise en page de la page, et
+   l'échelle est animée par la carte graphique. Pas de flou d'arrière-plan
+   non plus : il serait recalculé à chaque image du défilement. */
+.entete {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+.entete .nav { display: flex; align-items: center; gap: 28px; padding-block: 16px; }
+.entete.est-pose {
+  background: #fff;
+  box-shadow: 0 3px 0 var(--bois);
+}
+
+/* Tant que l'en-tête survole le haut de page sombre, texte clair. Il ne
+   reprend l'encre qu'une fois posé sur fond papier. */
+.entete:not(.est-pose) .nav-liens a { color: rgba(247, 247, 245, 0.86); }
+.entete:not(.est-pose) .nav-liens a:hover { color: var(--papier); }
+.entete:not(.est-pose) .burger { border-color: rgba(247, 247, 245, 0.4); }
+.entete:not(.est-pose) .burger span { background: var(--papier); }
+
+.marque { display: flex; flex-direction: column; text-decoration: none; margin-right: auto; }
+
+.nav-liens { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; white-space: nowrap; }
+.nav-liens a {
+  font-family: var(--font-mono); font-size: 0.75rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; color: var(--texte-doux);
+  position: relative; padding-block: 4px;
+  transition: color var(--transition);
+}
+.nav-liens a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 0;
+  background: var(--bois); transition: width var(--transition);
+}
+.nav-liens a:hover { color: var(--encre); }
+.nav-liens a:hover::after { width: 100%; }
+
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+.burger {
+  display: none; width: 44px; height: 44px; padding: 0;
+  background: none; border: 1px solid var(--ligne); border-radius: var(--rayon);
+  cursor: pointer; position: relative;
+}
+.burger span {
+  display: block; width: 18px; height: 1.5px; background: var(--encre);
+  margin: 4px auto; transition: transform var(--transition), opacity var(--transition);
+}
+
+.menu-mobile {
+  display: none;
+  position: fixed; inset: 0; z-index: 95;
+  background: var(--encre); color: var(--papier);
+  padding: 92px 28px 40px;
+  flex-direction: column;
+  overflow-y: auto; overscroll-behavior: contain;
+  transform: translateY(-100%);
+  /* Fermé, le menu est aussi invisible : ses liens sortent de l'ordre du
+     clavier. visibility attend la fin du glissement pour basculer. */
+  visibility: hidden;
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 0.5s;
+}
+.menu-mobile.est-ouvert { transform: translateY(0); visibility: visible; transition-delay: 0s; }
+.menu-mobile ul { list-style: none; margin: 0 0 32px; padding: 0; }
+.menu-mobile ul a {
+  display: block; padding: 15px 0;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.75rem;
+  letter-spacing: -0.02em; text-decoration: none; color: var(--papier);
+  border-bottom: 1px solid var(--ligne-encre);
+}
+.menu-mobile__fermer {
+  position: absolute; top: 24px; right: 24px;
+  background: none; border: 1px solid var(--ligne-encre); border-radius: var(--rayon);
+  color: var(--papier); font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.12em; text-transform: uppercase; padding: 11px 16px; cursor: pointer;
+}
+
+/* =========================================================================
+   HERO — texte sur anthracite, photos en fondu enchaîné à droite
+   ========================================================================= */
+
+.hero {
+  position: relative;
+  background: var(--encre);
+  color: var(--papier);
+  --visuel: 46%;              /* part de la largeur occupée par les photos */
+}
+.hero__cadre {
+  position: relative; min-height: 100svh;
+  display: flex; align-items: center;
+  padding: 140px 0 110px;
+  overflow: hidden;
+}
+/* Un voile en haut du cadre : l'en-tête reste lisible sur les photos. */
+.hero__cadre::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 180px; z-index: 4;
+  background: linear-gradient(to bottom, rgba(35, 35, 34, 0.7), rgba(35, 35, 34, 0));
+  pointer-events: none;
+}
+.hero .grille-plan { right: var(--visuel); opacity: 0.5; }
+
+.hero__visuel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: var(--visuel);
+  overflow: hidden; z-index: 1;
+}
+/* Le filet orange s'arrête sous l'en-tête, pour ne pas barrer le menu. */
+.hero__visuel::before {
+  content: ""; position: absolute; left: 0; top: 112px; bottom: 0; width: 6px; z-index: 2;
+  background: var(--bois);
+}
+/* Fondu vers l'anthracite côté texte : la photo s'ouvre, elle ne coupe pas. */
+/* Sur ordinateur, la photo commence sous l'en-tête : son bord ne coupe
+   plus un lien du menu. */
+@media (min-width: 961px) {
+  .hero__visuel { top: 96px; }
+  .hero__visuel::before { top: 0; }
+}
+.hero__visuel::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(to right, rgba(35, 35, 34, 0.38), rgba(35, 35, 34, 0) 30%),
+    linear-gradient(to top, rgba(35, 35, 34, 0.55), rgba(35, 35, 34, 0) 32%);
+}
+/* Pas de parallaxe : sur un écran 120 Hz, certains navigateurs (Safari
+   notamment) la calculent à 60 images/s pendant que la page défile à 120,
+   et la photo avance par à-coups. La photo défile donc avec la page, au
+   rythme natif de l'écran. */
+.hero__photos { position: absolute; inset: 0; }
+/* Une photo cachée est aussi retirée de l'affichage une fois le fondu
+   terminé : la carte graphique n'a qu'une image à composer, pas trois. */
+.hero__photo {
+  position: absolute; inset: 0; margin: 0;
+  opacity: 0; visibility: hidden;
+  transition: opacity 1.4s ease, visibility 0s linear 1.4s;
+}
+.hero__photo.est-active { opacity: 1; visibility: visible; transition: opacity 1.4s ease, visibility 0s; }
+.hero__photo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+.hero__contenu { position: relative; z-index: 5; width: 100%; }
+.hero__contenu > * { max-width: calc(100% - var(--visuel) - 24px); }
+
+.hero h1 { color: var(--papier); margin-bottom: 26px; font-size: clamp(2.6rem, 5.6vw, 5.4rem); }
+.hero h1 .fin { font-weight: 300; color: var(--bois-sur-encre); display: block; }
+.hero__texte {
+  max-width: 470px; color: rgba(237, 237, 234, 0.82); font-size: 1.08rem; margin-bottom: 34px;
+}
+.hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* Repère du diaporama : jauge, légende, pause. */
+.hero__repere {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px 18px;
+  margin-top: 54px; padding-top: 18px;
+  border-top: 1px solid var(--ligne-encre);
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em;
+}
+.hero__jauge { display: flex; gap: 6px; }
+.hero__jauge button {
+  width: 34px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer;
+  position: relative;
+}
+.hero__jauge button::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 13px; height: 2px;
+  background: #808079; transition: background var(--transition);
+}
+.hero__jauge button[aria-current="true"]::before { background: var(--bois-sur-encre); }
+.hero__legende { margin: 0; display: flex; gap: 12px; flex-wrap: wrap; text-transform: uppercase; flex: 1 1 240px; }
+.hero__legende-num { color: var(--plan-sur-encre); }
+.hero__legende-texte { color: var(--papier); }
+.hero__legende-credit { color: var(--texte-doux-sur-encre); text-transform: none; letter-spacing: 0.04em; }
+.hero__pause {
+  margin-left: auto; background: none; cursor: pointer;
+  border: 1px solid var(--ligne-encre); border-radius: var(--rayon);
+  color: var(--texte-doux-sur-encre); font: inherit; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 6px 11px; transition: border-color var(--transition), color var(--transition);
+}
+/* Une seule photo : rien à faire défiler. */
+.hero__repere.est-fixe .hero__jauge,
+.hero__repere.est-fixe .hero__legende-num,
+.hero__repere.est-fixe .hero__pause { display: none; }
+/* Aucune photo : le texte reprend toute la largeur. */
+.hero--sans-photo .hero__contenu > * { max-width: none; }
+.hero--sans-photo .grille-plan { right: 0; }
+
+/* Cartouche de plan : la « fiche technique » du hero. */
+.cartouche {
+  /* Aligné sur le bord droit du contenu de l'en-tête, même sur très grand écran. */
+  position: absolute; bottom: 40px; z-index: 5;
+  right: max(var(--gouttiere), calc((100vw - var(--largeur-large)) / 2 + var(--gouttiere)));
+  width: max-content;
+  border: 1px solid rgba(243, 146, 0, 0.45);
+  background: rgba(35, 35, 34, 0.86);
+  padding: 16px 20px; border-radius: var(--rayon);
+  font-family: var(--font-mono); font-size: 0.7rem; line-height: 1.9;
+  color: var(--plan-sur-encre); letter-spacing: 0.06em;
+}
+.cartouche dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; margin: 0; }
+.cartouche dt { color: rgba(247, 165, 52, 0.85); }
+.cartouche dd { margin: 0; color: var(--papier); text-align: right; }
+
+/* =========================================================================
+   SAVOIR-FAIRE — cartes en relief 3D
+   ========================================================================= */
+
+.metiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+/* Les dispositifs d'aide sont quatre : sur trois colonnes, le dernier
+   resterait seul sur sa ligne. */
+.metiers--quatre { grid-template-columns: repeat(4, 1fr); }
+
+.metier {
+  position: relative; padding: 30px 26px 26px;
+  background: var(--papier);
+  border: 1px solid var(--ligne);
+  border-radius: var(--rayon);
+  transition: transform 0.25s ease-out, box-shadow var(--transition), border-color var(--transition);
+}
+.metier__num {
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em;
+  color: var(--bois-texte); display: block; margin-bottom: 16px;
+}
+.metier h3 { margin-bottom: 10px; }
+.metier p { color: var(--texte-doux); font-size: 0.95rem; margin: 0; }
+
+/* =========================================================================
+   RÉALISATION — le panneau coulisse comme un portail, puis le cadre
+   orange désigne l'ouvrage. Uniquement des transform et des opacity :
+   l'animation tourne sur la carte graphique, une seule fois.
+   ========================================================================= */
+
+.rea { overflow: hidden; }
+.rea .wrap-large { position: relative; }
+.rea__tete { margin-bottom: clamp(30px, 4vw, 46px); }
+
+.rea__figure { position: relative; margin: 0; }
+.rea__photo {
+  position: relative; overflow: hidden;
+  aspect-ratio: 1672 / 941; border-radius: var(--rayon);
+  background: var(--encre-2);
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.7);
+}
+.rea__photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+
+/* Le panneau à lames : n'existe que si le script a préparé l'animation
+   (classe posée par main.js). Sans script, la photo s'affiche directement. */
+.rea__portail { display: none; }
+.anim-portail .rea__portail {
+  display: block; position: absolute; inset: 0; z-index: 3;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.18)),
+    repeating-linear-gradient(90deg, #4b4b49 0 calc(100% / 9 - 3px), #2f2f2e calc(100% / 9 - 3px) calc(100% / 9));
+  border-left: 6px solid var(--bois);
+  transform: translate3d(0, 0, 0);
+  transition: transform 1.9s cubic-bezier(0.7, 0, 0.25, 1) 0.2s;
+}
+.rea__poignee {
+  position: absolute; left: 3.5%; top: 50%; width: 6px; height: 16%;
+  transform: translateY(-50%); border-radius: 3px; background: var(--bois);
+}
+.rea__marque {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  font-family: var(--font-mono); font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+  letter-spacing: 0.3em; text-transform: uppercase; color: rgba(247, 247, 245, 0.55);
+  white-space: nowrap;
+}
+.anim-portail .rea__figure.est-ouverte .rea__portail { transform: translate3d(101%, 0, 0); }
+.anim-portail .rea__photo img { transform: scale(1.05); transition: transform 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s; }
+.anim-portail .rea__figure.est-ouverte .rea__photo img { transform: scale(1); }
+
+/* Le cadre : quatre coins orange autour du portail de Tiago. */
+.rea__cadre { position: absolute; z-index: 2; pointer-events: none; }
+.rea__cadre i {
+  position: absolute; width: clamp(12px, 2vw, 26px); height: clamp(12px, 2vw, 26px);
+  border: 0 solid var(--bois);
+}
+.rea__cadre i:nth-child(1) { left: -8px; top: -8px; border-width: 3px 0 0 3px; }
+.rea__cadre i:nth-child(2) { right: -8px; top: -8px; border-width: 3px 3px 0 0; }
+.rea__cadre i:nth-child(3) { left: -8px; bottom: -8px; border-width: 0 0 3px 3px; }
+.rea__cadre i:nth-child(4) { right: -8px; bottom: -8px; border-width: 0 3px 3px 0; }
+.rea__etiquette {
+  position: absolute; left: -8px; bottom: calc(100% + 16px);
+  background: var(--bois); color: var(--encre);
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
+  padding: 8px 12px; border-radius: var(--rayon);
+}
+.rea__etiquette::after {
+  content: ""; position: absolute; left: 14px; top: 100%;
+  border: 7px solid transparent; border-top-color: var(--bois);
+}
+/* Les coins se resserrent sur l'ouvrage une fois le portail ouvert. */
+.anim-portail .rea__cadre i { opacity: 0; transition: opacity 0.5s ease 1.7s, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 1.7s; }
+.anim-portail .rea__cadre i:nth-child(1) { transform: translate(-14px, -14px); }
+.anim-portail .rea__cadre i:nth-child(2) { transform: translate(14px, -14px); }
+.anim-portail .rea__cadre i:nth-child(3) { transform: translate(-14px, 14px); }
+.anim-portail .rea__cadre i:nth-child(4) { transform: translate(14px, 14px); }
+.anim-portail .rea__etiquette { opacity: 0; transform: translateY(8px); transition: opacity 0.5s ease 2.2s, transform 0.5s ease 2.2s; }
+.anim-portail .est-ouverte .rea__cadre i,
+.anim-portail .est-ouverte .rea__etiquette { opacity: 1; transform: none; }
+
+.rea__legende {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+  border-radius: 0 0 var(--rayon) var(--rayon);
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  padding: 40px 22px 16px;
+  background: linear-gradient(to top, rgba(35, 35, 34, 0.85), rgba(35, 35, 34, 0));
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--papier);
+}
+.rea__legende span:last-child { color: var(--plan-sur-encre); }
+.rea__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+@media (max-width: 720px) {
+  .rea .wrap-large { padding: 0; }
+  .rea__tete, .rea__actions { padding: 0 var(--gouttiere); }
+  .rea__photo { border-radius: 0; }
+  /* Sur téléphone, l'étiquette passe dans la légende, sous la photo. */
+  .rea__etiquette { display: none; }
+  .rea__cta-long { display: none; }
+  .rea__legende { position: static; padding: 12px var(--gouttiere) 0; background: none; font-size: 0.66rem; }
+}
+
+/* =========================================================================
+   RÉALISATIONS
+   ========================================================================= */
+
+.filtres { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 30px; }
+.filtre {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 9px 17px; border-radius: 999px;
+  border: 1px solid var(--ligne); background: transparent; color: var(--texte-doux);
+  cursor: pointer; transition: all var(--transition);
+}
+.filtre[aria-pressed="true"] { background: var(--encre); border-color: var(--encre); color: var(--papier); }
+
+/* Mosaïque (3 colonnes : 5 photos en largeur et 8 en hauteur remplissent
+   exactement 6 rangées) : une photo en hauteur prend une colonne, une photo en largeur
+   en prend deux (classe posée par main.js d'après le format réel). */
+.galerie {
+  --colonnes: 3;
+  display: grid; grid-template-columns: repeat(var(--colonnes), 1fr); gap: 16px; grid-auto-flow: dense;
+  /* Hauteur de rangée = largeur d'une colonne × 5/4 : chaque photo en
+     hauteur tombe juste en 4:5, chaque photo en largeur en 8:5 environ. */
+  grid-auto-rows: calc((min(100vw, var(--largeur)) - 2 * var(--gouttiere) - (var(--colonnes) - 1) * 16px) / var(--colonnes) * 1.25);
+}
+
+.oeuvre {
+  position: relative; border: 0; padding: 0; margin: 0;
+  background: var(--papier-3); border-radius: var(--rayon);
+  overflow: hidden; cursor: zoom-in; text-align: left;
+  transition: opacity 0.4s, transform 0.4s;
+}
+.oeuvre--paysage { grid-column: span 2; }
+.oeuvre::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 0;
+  background: var(--bois); transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.oeuvre:focus-visible::after { width: 100%; }
+.oeuvre img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.oeuvre__voile {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(35, 35, 34, 0.9) 0%, rgba(35, 35, 34, 0.15) 45%, transparent 70%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 20px; gap: 3px;
+}
+.oeuvre__titre { font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 1.02rem; }
+.oeuvre__meta { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); }
+.oeuvre.est-masquee { display: none; }
+
+/* =========================================================================
+   PROCESSUS
+   ========================================================================= */
+
+.etapes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.etape { padding: 0 22px 0 0; position: relative; }
+.etape::before {
+  content: ""; position: absolute; left: 0; top: 13px; right: 22px;
+  height: 1px; background: var(--ligne);
+}
+.etape::after {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--papier); border: 1px solid var(--bois);
+}
+.etape.est-vue::after { background: var(--bois); }
+.etape__num {
+  display: block; margin: 38px 0 12px;
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; color: var(--bois-texte);
+}
+.etape h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.etape p { color: var(--texte-doux); font-size: 0.93rem; margin: 0; }
+
+/* =========================================================================
+   DEVIS — formulaire par étapes
+   ========================================================================= */
+
+.devis { display: grid; grid-template-columns: 1fr 1.25fr; gap: 54px; align-items: start; }
+
+.devis__jauge { display: flex; gap: 6px; margin-bottom: 28px; }
+.devis__jauge span {
+  flex: 1; height: 2px; background: var(--ligne-encre); border-radius: 2px;
+  transition: background var(--transition);
+}
+.devis__jauge span.est-faite { background: var(--bois-sur-encre); }
+
+.volet { display: none; }
+.volet.est-active { display: block; animation: entre 0.45s cubic-bezier(0.22, 0.61, 0.36, 1); }
+@keyframes entre { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.volet__titre {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--plan-sur-encre); margin-bottom: 20px;
+  display: block;
+}
+
+.choix { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.choix label {
+  display: block; padding: 15px 17px; cursor: pointer;
+  border: 1px solid #808079; border-radius: var(--rayon);
+  transition: border-color var(--transition), background-color var(--transition);
+  font-size: 0.95rem;
+}
+/* Nombre impair de choix : le dernier (« SAV ») prend toute la ligne. */
+.choix label:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.choix input { position: absolute; opacity: 0; pointer-events: none; }
+.choix label:has(input:checked) {
+  border-color: var(--bois-sur-encre); background: var(--orange-voile);
+}
+/* L'input est dans son label : le repère de focus va sur le label. */
+.choix label:has(input:focus-visible) { outline: 2px solid var(--plan-sur-encre); outline-offset: 2px; }
+.choix__note {
+  display: block; font-family: var(--font-mono); font-size: 0.68rem;
+  letter-spacing: 0.06em; color: var(--texte-doux-sur-encre); margin-top: 3px;
+}
+
+.champ { margin-bottom: 17px; }
+.champ label {
+  display: block; margin-bottom: 6px;
+  font-family: var(--font-mono); font-size: 0.7rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--texte-doux-sur-encre);
+}
+.champ .obl { color: var(--bois-sur-encre); }
+.champ input, .champ select, .champ textarea {
+  width: 100%; font: inherit; font-size: 0.97rem;
+  padding: 13px 15px; border-radius: var(--rayon);
+  background: var(--encre-3); border: 1px solid #808079; color: var(--papier);
+  transition: border-color var(--transition);
+}
+.champ textarea { resize: vertical; min-height: 92px; }
+.champ input:focus, .champ select:focus, .champ textarea:focus { border-color: var(--bois-sur-encre); }
+.champ input::placeholder, .champ textarea::placeholder { color: #b3b3ae; }
+.champ__erreur {
+  margin: 6px 0 0; min-height: 1.1em;
+  font-family: var(--font-mono); font-size: 0.7rem; color: #f0a07a;
+}
+/* Plus fort que « .section--encre p » : les erreurs restent saumon. */
+.section--encre .champ__erreur { color: #f0a07a; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.devis__pied { display: flex; align-items: center; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+.devis__etat { font-family: var(--font-mono); font-size: 0.74rem; flex-basis: 100%; min-height: 1.2em; }
+.devis__etat.est-ko { color: #f0a07a; }
+.devis__note { font-family: var(--font-mono); font-size: 0.68rem; color: var(--texte-doux-sur-encre); flex-basis: 100%; margin: 0; }
+
+.devis__aparte { border-left: 1px solid var(--ligne-encre); padding-left: 26px; }
+.devis__aparte h3 { color: var(--papier); }
+.devis__aparte ul { list-style: none; margin: 22px 0 0; padding: 0; }
+.devis__aparte li {
+  padding: 13px 0; border-bottom: 1px solid var(--ligne-encre);
+  font-size: 0.95rem; color: var(--texte-doux-sur-encre);
+  display: flex; gap: 13px;
+}
+.devis__aparte li strong { color: var(--papier); font-weight: 600; }
+.devis__aparte li span:first-child { color: var(--bois-sur-encre); font-family: var(--font-mono); font-size: 0.72rem; padding-top: 3px; }
+
+/* =========================================================================
+   AVIS / INFOS / PIED
+   ========================================================================= */
+
+.avis-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.avis-carte {
+  padding: 28px 26px; background: var(--papier); border: 1px solid var(--ligne);
+  border-radius: var(--rayon);
+}
+.avis-carte__etoiles { color: var(--bois-texte); letter-spacing: 3px; margin-bottom: 12px; }
+.avis-carte__texte { font-size: 1rem; margin-bottom: 14px; }
+.avis-carte__nom { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--texte-doux); margin: 0; }
+.note-honnete {
+  margin-top: 26px; font-family: var(--font-mono); font-size: 0.72rem;
+  color: var(--texte-doux); line-height: 1.8; max-width: 75ch;
+}
+.section--encre .note-honnete { color: var(--texte-doux-sur-encre); }
+
+.infos-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+.bloc-info__label {
+  display: block; margin-bottom: 11px;
+  font-family: var(--font-mono); font-size: 0.7rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--bois-texte);
+}
+.bloc-info p { margin: 0; line-height: 1.9; }
+.horaires { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+.horaires td { padding: 4px 0; color: var(--texte-doux); }
+.horaires td:first-child { color: var(--texte); padding-right: 18px; }
+
+.zone-liste { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.zone-liste span {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
+  padding: 7px 14px; border: 1px solid var(--ligne); border-radius: 999px; color: var(--texte-doux);
+}
+
+.pied { background: var(--encre); color: var(--texte-doux-sur-encre); padding: 76px 0 32px; }
+.pied__cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 34px; margin-bottom: 44px; }
+.pied h4 {
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--papier); margin-bottom: 14px;
+}
+.pied ul { list-style: none; margin: 0; padding: 0; }
+.pied li { margin-bottom: 8px; }
+.pied__reseaux { margin-top: 8px !important; }
+.pied a { color: var(--texte-doux-sur-encre); text-decoration: none; transition: color var(--transition); }
+.pied a:hover { color: var(--bois-sur-encre); }
+.pied__bas {
+  display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 14px;
+  padding-top: 26px; border-top: 1px solid var(--ligne-encre);
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em;
+}
+.pied__legal { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+/* Liens du pied : au moins 24 px de haut, pour le doigt. */
+.pied__legal a, .pied__bas a { display: inline-block; padding: 4px 0; }
+
+/* =========================================================================
+   VISIONNEUSE (lightbox)
+   ========================================================================= */
+
+.visionneuse {
+  position: fixed; inset: 0; z-index: 120;
+  background: #0c0f10;
+  display: none; place-items: center; padding: 70px 20px;
+}
+.visionneuse.est-ouverte { display: grid; }
+.visionneuse figure { margin: 0; max-width: 940px; width: 100%; }
+.visionneuse img { width: 100%; height: auto; max-height: 74vh; object-fit: contain; border-radius: var(--rayon); }
+.visionneuse figcaption {
+  margin-top: 16px; text-align: center;
+  font-family: var(--font-mono); font-size: 0.74rem;
+  letter-spacing: 0.1em; color: rgba(237, 237, 234, 0.72);
+}
+.visionneuse__fermer, .visionneuse__nav {
+  position: absolute; background: rgba(12, 15, 16, 0.8); cursor: pointer;
+  border: 1px solid rgba(237, 237, 234, 0.28); border-radius: var(--rayon);
+  color: var(--papier); font-family: var(--font-mono); font-size: 0.74rem;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 16px;
+  transition: border-color var(--transition), background var(--transition);
+}
+.visionneuse__fermer { top: 20px; right: 20px; }
+.visionneuse__nav--prec { left: 20px; top: 50%; transform: translateY(-50%); }
+.visionneuse__nav--suiv { right: 20px; top: 50%; transform: translateY(-50%); }
+.visionneuse__nav { font-size: 1.1rem; padding: 8px 16px; }
+
+/* =========================================================================
+   APPARITIONS AU DÉFILEMENT
+   ========================================================================= */
+
+.apparait { opacity: 0; transform: translateY(26px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.apparait.est-visible { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+
+/* =========================================================================
+   APPEL FLOTTANT MOBILE
+   ========================================================================= */
+
+.appel-mobile {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 80;
+  display: none; gap: 10px;
+  transform: translateY(150%); transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.appel-mobile .btn { flex: 1; box-shadow: 0 12px 30px -10px rgba(35, 35, 34, 0.55); }
+body.est-descendu .appel-mobile { transform: translateY(0); }
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 1080px) {
+  .devis { grid-template-columns: 1fr; gap: 38px; }
+  .devis__aparte { border-left: 0; border-top: 1px solid var(--ligne-encre); padding: 26px 0 0; }
+  .etapes { grid-template-columns: repeat(2, 1fr); row-gap: 34px; }
+}
+
+@media (max-width: 860px) {
+  .metiers, .avis-grille, .infos-grille { grid-template-columns: repeat(2, 1fr); }
+  .pied__cols { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 720px) {
+  :root { --gouttiere: 18px; }
+  body { font-size: 16px; }
+
+  .nav-actions .btn { display: none; }
+
+  .hero__cadre { min-height: 92svh; padding: 118px 0 64px; }
+  .hero__texte { max-width: none; }
+  /* Sur la photo, le repère garde un fond sombre : lisible même sur les
+     zones claires de l'image. */
+  .hero__repere {
+    margin-top: 32px; padding: 12px 14px; border: 0; border-radius: var(--rayon);
+    background: rgba(35, 35, 34, 0.9);
+  }
+  .hero__legende { order: 3; flex-basis: 100%; gap: 4px 12px; }
+  /* Galerie en deux colonnes : une seule colonne faisait plus de 4 600 px. */
+  .galerie { --colonnes: 2; grid-auto-rows: auto; gap: 10px; }
+  .oeuvre { aspect-ratio: 4 / 5; }
+  .oeuvre--paysage { grid-column: span 2; aspect-ratio: 8 / 5; }
+  .oeuvre__voile { padding: 12px; }
+
+  .metiers, .metiers--quatre, .avis-grille, .infos-grille, .etapes, .duo {
+    grid-template-columns: 1fr;
+  }
+  .etape { padding: 0 0 4px; }
+  .etape::before { display: none; }
+  .etape::after { top: 26px; }
+  .etape__num { margin-top: 22px; padding-left: 24px; }
+  .etape h3, .etape p { padding-left: 24px; }
+
+  .pied__cols { grid-template-columns: 1fr; }
+  .pied__bas { flex-direction: column; }
+
+  .appel-mobile { display: flex; }
+  /* La barre d'appel flottante ne doit pas recouvrir les liens du pied. */
+  .pied { padding-bottom: 100px; }
+}
+/* Visionneuse sur téléphone et tablette : les flèches passent en bas de
+   l'écran, hors de la photo. */
+@media (max-width: 1100px) {
+  .visionneuse__nav { top: auto; bottom: 20px; transform: none; }
+}
+/* Pages légales : pas de barre d'appel, donc pas de marge pour elle. */
+.pied.pied--court { padding: 32px 0; }
+
+/* =========================================================================
+   TDS FERMETURES — éléments de marque
+   ========================================================================= */
+
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* En-tête : le logo, et un filet orange une fois posé. */
+.marque { color: var(--encre); }
+.marque__logo { height: 60px; width: auto; transform-origin: left center; transition: transform var(--transition); }
+.entete.est-pose .marque__logo { transform: scale(0.84); }
+.hero .annot { color: var(--plan-sur-encre); }
+.cartouche dt, .cartouche dd { white-space: nowrap; }
+.entete:not(.est-pose) .marque { color: #fff; }
+.entete.est-pose { background: #fff; }
+.entete__tel {
+  font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.06em; font-weight: 600;
+  text-decoration: none; color: var(--encre); white-space: nowrap;
+  padding: 10px 4px;
+}
+.entete__tel::before { content: "\260E\FE0E\A0"; color: var(--bois-texte); }
+.entete:not(.est-pose) .entete__tel { color: #fff; }
+.entete:not(.est-pose) .entete__tel::before { color: var(--bois); }
+.nav-liens a:hover { color: var(--bois-texte); }
+.entete:not(.est-pose) .nav-liens a:hover { color: var(--bois); }
+
+.btn--sombre { background: var(--encre); border-color: var(--encre); color: #fff; }
+.btn--plein { font-weight: 700; }
+
+/* Bandeau orange : les quatre engagements de la carte. */
+.section--orange { background: var(--bois); color: var(--encre); padding: clamp(46px, 7vh, 72px) 0; }
+.engagements { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.engagement { border-left: 3px solid var(--encre); padding: 4px 0 4px 18px; }
+.engagement h3 {
+  font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;
+  color: var(--encre);
+}
+.engagement h3::before { content: "› "; font-weight: 900; }
+.engagement p { margin: 0; font-size: 0.95rem; color: #2c1a00; }
+
+/* Cartes de prestation : la pastille numérotée passe à l'orange. */
+.metier__num { color: var(--bois-texte); }
+.metier { border-top: 3px solid var(--bois); }
+
+/* Contact. */
+.lien-fort { font-size: 1.5rem; font-weight: 800; color: var(--encre); text-decoration: none; }
+.lien-fort:hover { color: var(--bois-texte); }
+.bloc-info a { color: var(--bois-texte); overflow-wrap: anywhere; }
+.bloc-info__sous {
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--texte-doux);
+}
+.bloc-info .horaires { margin-top: 12px; }
+
+.entreprise__logo {
+  background: #fff; border: 1px solid var(--ligne); border-top: 4px solid var(--bois);
+  border-radius: var(--rayon); padding: clamp(28px, 6vw, 64px);
+}
+.entreprise__logo img { width: min(100%, 360px); height: auto; margin: 0 auto; }
+
+/* Aides : la fenêtre en photo produit, à côté des critères. */
+.aides__detail {
+  margin-top: 44px; display: grid; grid-template-columns: minmax(180px, 0.7fr) 1fr 1fr;
+  gap: 34px; align-items: start;
+}
+.aides__produit { align-self: center; }
+/* La carte « Primes et éco-PTZ » décrit une exclusion : liseré anthracite. */
+#aides .metier:last-child { border-top-color: var(--encre); }
+.aides__produit {
+  margin: 0; background: #fff; border: 1px solid var(--ligne); border-top: 3px solid var(--bois);
+  border-radius: var(--rayon); padding: 18px 18px 10px;
+}
+.aides__produit img { width: 100%; max-width: 240px; height: auto; margin: 0 auto; }
+.aides__produit figcaption {
+  margin-top: 8px; text-align: right;
+  font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.06em; color: var(--texte-doux);
+}
+
+/* En-tête de section sur deux colonnes : titre à gauche, texte à droite. */
+.tete--large { max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 54px; align-items: end; }
+.tete--large h2 { margin-bottom: 0; }
+.tete--large p { margin: 0; }
+
+/* Formulaire : piège à robots, secours et remerciement. */
+.piege { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.devis__note a { color: var(--bois-sur-encre); }
+.devis__secours {
+  margin-top: 22px; padding: 20px; border: 1px solid var(--bois-sur-encre); border-radius: var(--rayon);
+  background: var(--orange-voile);
+}
+.devis__secours p { margin: 0 0 14px; color: var(--texte-sur-encre); }
+.devis__secours-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.devis__secours .devis__secours-aide { margin: 16px 0 0; font-size: 0.9rem; }
+.devis__secours-aide + .devis__secours-aide { margin-top: 8px; }
+.devis__secours-aide a { color: var(--bois-sur-encre); overflow-wrap: anywhere; }
+.lien-bouton {
+  padding: 0; border: 0; background: none; font: inherit; color: var(--bois-sur-encre);
+  text-decoration: underline; cursor: pointer;
+}
+.devis__merci {
+  padding: 34px; border: 1px solid var(--bois-sur-encre); border-left: 6px solid var(--bois);
+  border-radius: var(--rayon); background: var(--orange-voile); align-self: start;
+}
+.devis__merci h3 { color: var(--papier); }
+.devis__merci p { color: var(--texte-sur-encre); margin: 0; }
+.devis__merci a { color: var(--bois-sur-encre); }
+.devis__merci:focus { outline: none; }
+#envoyer[disabled] { opacity: 0.6; cursor: wait; }
+
+/* Pied de page. */
+.pied { border-top: 6px solid var(--bois); }
+.pied__logo { width: 170px; height: auto; margin-bottom: 40px; }
+.pied a:hover { color: var(--bois); }
+
+@media (max-width: 1080px) {
+  .entete__tel { display: none; }
+}
+/* Sous 1100 px, quatre cartes côte à côte deviendraient étroites et très
+   hautes (prestations comme TVA) : elles passent en rangées de deux. */
+@media (max-width: 1100px) and (min-width: 721px) {
+  .metiers--quatre { grid-template-columns: repeat(2, 1fr); }
+}
+/* Tablettes : le menu complet ne tient pas sur une ligne, il passe dans le
+   menu déroulant ; le bouton « Demander un devis » reste visible. */
+@media (max-width: 1100px) {
+  .nav-principale { display: none; }
+  .burger { display: block; }
+  .menu-mobile { display: flex; }
+}
+/* Sous 960 px, la photo passe en plein fond, sous un voile anthracite. */
+@media (max-width: 960px) {
+  .hero { --visuel: 100%; }
+  .hero__visuel::before { top: auto; left: 0; right: 0; bottom: 0; width: auto; height: 6px; }
+  .hero__visuel::after {
+    background: linear-gradient(to bottom, rgba(35, 35, 34, 0.9) 0%, rgba(35, 35, 34, 0.8) 55%, rgba(35, 35, 34, 0.42) 100%);
+  }
+  .hero__contenu > * { max-width: 620px; }
+  .hero .grille-plan { display: none; }
+  /* Plus de place à côté du texte : le cartouche recouvrait la légende et
+     le bouton Pause du diaporama. */
+  .cartouche { display: none; }
+}
+@media (max-width: 860px) {
+  .engagements { grid-template-columns: repeat(2, 1fr); }
+  .aides__detail { grid-template-columns: 1fr 1fr; }
+  .aides__produit { grid-column: 1 / -1; max-width: 280px; }
+  .tete--large { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .marque__logo { height: 48px; }
+  /* Les blocs en deux colonnes (styles en ligne) passent l'un sous l'autre. */
+  [data-split] { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .appel-mobile .btn { padding: 14px 10px; letter-spacing: 0.06em; font-size: 0.72rem; white-space: nowrap; }
+  .engagements { grid-template-columns: 1fr; gap: 22px; }
+  .aides__detail { grid-template-columns: 1fr; gap: 26px; }
+  .appel-mobile .btn--sombre { border-color: rgba(247, 247, 245, 0.5); }
+  /* Boutons empilés : même largeur, sur toute la ligne. */
+  .hero__actions .btn, .rea__actions .btn, .devis__secours-actions .btn, .devis__pied .btn { flex: 1 1 100%; }
+  .entreprise__actions { grid-template-columns: 1fr !important; }
+  .devis__secours .btn { padding-inline: 16px; letter-spacing: 0.06em; }
+  /* Pages légales : le bouton de retour reste visible sur téléphone. */
+  .nav-actions .btn--retour { display: inline-flex; }
+}
+
+/* =========================================================================
+   MOUVEMENT RÉDUIT
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .apparait { opacity: 1; transform: none; }
+  .metier { transform: none !important; }
+}
+
+/* =========================================================================
+   PAGES LÉGALES
+   ========================================================================= */
+
+.page-legale { padding-top: 150px; }
+.page-legale h2 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); margin: 2em 0 0.5em; }
+
+/* Menu mobile : boutons séparés et de largeur raisonnable sur tablette. */
+.menu-mobile .btn { max-width: 420px; }
+.menu-mobile .btn--clair { margin-top: 10px; }
+/* Visionneuse ouverte : la barre d'appel ne transparaît plus. */
+body:has(.visionneuse.est-ouverte) .appel-mobile { visibility: hidden; }
+/* Devis à l'écran : la barre d'appel s'efface (voir main.js). */
+body.devis-visible .appel-mobile { transform: translateY(150%); }
+
+@media (max-width: 720px) {
+  html { scroll-padding-bottom: 100px; }
+}
+/* Écran peu haut (téléphone à l'horizontale). */
+@media (max-height: 520px) {
+  .menu-mobile { padding-top: 72px; }
+  .menu-mobile ul a { font-size: 1.3rem; padding: 9px 0; }
+  .visionneuse { padding: 12px 110px; }
+  .visionneuse img { max-height: calc(100vh - 60px); }
+  .visionneuse figcaption { margin-top: 6px; }
+  .visionneuse__nav { top: 50%; bottom: auto; transform: translateY(-50%); }
+}
+@media (max-width: 720px) and (orientation: landscape) {
+  .galerie { --colonnes: 3; }
+}
+/* Sur ordinateur, la photo commence sous l'en-tête : le voile du haut,
+   prévu pour l'en-tête posé sur la photo, n'a plus d'objet. */
+@media (min-width: 961px) {
+  .hero__cadre::before { display: none; }
+}
+
+/* Impression : tout est visible, même ce qui n'a pas encore défilé. */
+@media print {
+  .apparait { opacity: 1 !important; transform: none !important; }
+  .entete { position: absolute; }
+  .anim-portail .rea__portail { display: none; }
+  .anim-portail .rea__photo img, .anim-portail .rea__cadre i, .anim-portail .rea__etiquette { opacity: 1; transform: none; }
+  .hero__repere, .appel-mobile, .visionneuse, .devis__pied, .filtres, .burger, .cartouche, .grille-plan { display: none !important; }
+  .hero, .section--encre, .pied { background: #fff !important; color: #232322 !important; }
+  .hero h1, .hero__texte, .section--encre h2, .section--encre h3, .section--encre p, .btn--clair { color: #232322 !important; }
+}

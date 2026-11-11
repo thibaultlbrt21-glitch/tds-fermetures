@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 196" role="img" aria-labelledby="t">
+  <title id="t">TDS Fermetures</title>
+  <!-- Logo TDS Fermetures, redessiné en vectoriel d'après la carte de visite.
+       Remplacer par le fichier d'origine du graphiste s'il est disponible. -->
+  <g fill="none" stroke="#F39200" stroke-linejoin="miter" stroke-linecap="square">
+    <path d="M22 182 V80 L112 16 L204 80" stroke-width="12"/>
+    <path d="M90 60 L112 44 L134 60" stroke-width="9"/>
+    <path d="M22 184 H222" stroke-width="7"/>
+  </g>
+  <text x="40" y="136" textLength="164" lengthAdjust="spacingAndGlyphs"
+        font-family="'Arial Black','Segoe UI Black',Impact,system-ui,sans-serif" font-weight="900"
+        font-size="74" fill="#3C3C3B">TDS</text>
+  <text x="42" y="170" textLength="160" lengthAdjust="spacingAndGlyphs"
+        font-family="'Arial','Segoe UI',system-ui,sans-serif" font-weight="800"
+        font-size="24" fill="#F39200">FERMETURES</text>
+</svg>

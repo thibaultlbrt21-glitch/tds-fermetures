@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<!-- Aucune ressource tierce : scripts, styles et images viennent du site.
+     Si un service d'envoi du devis est réactivé (main.js, serviceEnvoi),
+     ajouter son adresse à connect-src. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fenêtres, volets, portes et portails à Dijon | TDS Fermetures</title>
+<meta name="description" content="Pose de fenêtres, volets roulants, portes, portails et automatismes à Dijon et en Côte-d'Or. Visite sur place et devis détaillé. Tél. 06 58 00 82 26.">
+<link rel="canonical" href="https://thibaultlbrt21-glitch.github.io/Template-sites-internets/tds-fermetures/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TDS Fermetures">
+<meta property="og:title" content="TDS Fermetures — Fenêtres, volets, portes et portails à Dijon et en Côte-d'Or">
+<meta property="og:description" content="Pose de fenêtres, volets, portes, portails et automatismes à Dijon et en Côte-d'Or. Devis au 06 58 00 82 26.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://thibaultlbrt21-glitch.github.io/Template-sites-internets/tds-fermetures/">
+<meta property="og:image" content="https://thibaultlbrt21-glitch.github.io/Template-sites-internets/tds-fermetures/assets/images/partage.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TDS Fermetures, Dijon et Côte-d'Or : portail coulissant posé par l'entreprise. 06 58 00 82 26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F39200">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- Sans JavaScript, les blocs qui apparaissent au défilement restent visibles. -->
+<noscript><style>.apparait{opacity:1;transform:none}.hero__repere,.devis__pied,.devis__jauge,#formDevis .volet,.burger{display:none}</style></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "TDS Fermetures",
+  "description": "Pose de fenêtres, volets roulants, portes, portails et clôtures, portes de garage, pergolas, automatismes et visiophones.",
+  "legalName": "TDS FERMETURES",
+  "url": "https://thibaultlbrt21-glitch.github.io/Template-sites-internets/tds-fermetures/",
+  "logo": "https://thibaultlbrt21-glitch.github.io/Template-sites-internets/tds-fermetures/assets/logo/tds-fermetures.svg",
+  "image": "https://thibaultlbrt21-glitch.github.io/Template-sites-internets/tds-fermetures/assets/images/partage.jpg",
+  "telephone": "+33658008226",
+  "email": "tiagotdsfermetures.21@hotmail.com",
+  "vatID": "FR53108023805",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "24 rue Lavoisier",
+    "postalCode": "21000",
+    "addressLocality": "Dijon",
+    "addressCountry": "FR"
+  },
+  "areaServed": { "@type": "AdministrativeArea", "name": "Côte-d'Or" },
+  "sameAs": ["https://www.facebook.com/share/19ZKpWqVXY/"]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#principal">Aller au contenu principal</a>
+
+<!-- ===================== EN-TÊTE ===================== -->
+<header class="entete" id="entete">
+  <div class="wrap-large nav">
+    <a href="#principal" class="marque" aria-label="TDS Fermetures — accueil">
+      <!-- Logo en ligne : « TDS » prend la couleur du texte de l'en-tête
+           (blanc sur la photo, anthracite une fois l'en-tête posé). -->
+      <svg class="marque__logo" viewBox="0 0 240 196" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="#F39200" stroke-linejoin="miter" stroke-linecap="square">
+          <path d="M22 182 V80 L112 16 L204 80" stroke-width="12"/>
+          <path d="M90 60 L112 44 L134 60" stroke-width="9"/>
+          <path d="M22 184 H222" stroke-width="7"/>
+        </g>
+        <text x="40" y="136" textLength="164" lengthAdjust="spacingAndGlyphs" font-family="'Arial Black','Segoe UI Black',Impact,system-ui,sans-serif" font-weight="900" font-size="74" fill="currentColor">TDS</text>
+        <text x="42" y="170" textLength="160" lengthAdjust="spacingAndGlyphs" font-family="Arial,'Segoe UI',system-ui,sans-serif" font-weight="800" font-size="24" fill="#F39200">FERMETURES</text>
+      </svg>
+      <span class="sr-only" data-cms="marque.nom">TDS Fermetures</span>
+    </a>
+
+    <nav class="nav-principale" aria-label="Navigation principale">
+    <ul class="nav-liens">
+      <li><a href="#prestations">Prestations</a></li>
+      <li><a href="#chantiers">En images</a></li>
+      <li><a href="#aides">TVA réduite</a></li>
+      <li><a href="#infos">Contact</a></li>
+    </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="tel:+33658008226" class="entete__tel" data-cms="infos.telephone" data-cms-lien="tel">06 58 00 82 26</a>
+      <a href="#devis" class="btn btn--sm btn--plein">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menuMobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="menu-mobile" id="menuMobile" aria-label="Menu">
+  <button class="menu-mobile__fermer" id="fermerMenu">Fermer</button>
+  <ul>
+    <li><a href="#prestations">Prestations</a></li>
+    <li><a href="#chantiers">En images</a></li>
+    <li><a href="#aides">TVA réduite</a></li>
+    <li><a href="#devis">Devis</a></li>
+    <li><a href="#infos">Contact</a></li>
+  </ul>
+  <a href="#devis" class="btn btn--plein">Demander un devis</a>
+  <a href="tel:+33658008226" class="btn btn--clair">Appeler le 06 58 00 82 26</a>
+</nav>
+
+<main id="principal">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="accueil">
+    <div class="hero__cadre">
+      <div class="grille-plan" aria-hidden="true"></div>
+
+      <!-- Photos de l'accueil, en fondu enchaîné (content/site.json,
+           hero.photos). Seule la première se charge avec la page. -->
+      <div class="hero__visuel">
+        <div class="hero__photos" data-cms-list="hero.photos">
+          <figure class="hero__photo est-active" data-legende="Portail coulissant — réalisation TDS Fermetures">
+            <img src="assets/images/realisation-portail-coulissant.jpg" alt="Portail coulissant anthracite à lames verticales posé par TDS Fermetures devant une maison contemporaine" style="object-position: 66% 50%;" fetchpriority="high" decoding="async">
+          </figure>
+          <figure class="hero__photo" data-legende="Fenêtres et volets battants" data-credit="Photo FenêtréA">
+            <img data-src="assets/images/fenetre-facade-grise.jpg" alt="Façade grise, fenêtres blanches et volets battants anthracite" decoding="async">
+          </figure>
+          <figure class="hero__photo" data-legende="Baie coulissante" data-credit="Photo FenêtréA">
+            <img data-src="assets/images/baie-coulissante-terrasse.jpg" alt="Grande baie coulissante ouverte sur une terrasse" decoding="async">
+          </figure>
+          <figure class="hero__photo" data-legende="Porte d'entrée" data-credit="Photo FenêtréA">
+            <img data-src="assets/images/porte-grise-vitrage.jpg" alt="Porte d'entrée grise à vitrage ondulé, vue depuis l'intérieur" decoding="async">
+          </figure>
+        </div>
+      </div>
+
+      <div class="wrap-large hero__contenu">
+        <span class="annot" data-cms="hero.surtitre">Dijon et Côte-d'Or · Portes · Fenêtres · Volets · Portails</span>
+        <h1 id="titrePrincipal" tabindex="-1">
+          <span data-cms="hero.titre_1">Vos fermetures,</span>
+          <span class="fin" data-cms="hero.titre_2">posées avec soin.</span>
+        </h1>
+        <p class="hero__texte" data-cms="hero.texte">
+          Fenêtres, volets roulants, portes, portails et clôtures, portes de
+          garage, pergolas, automatismes et visiophones, à Dijon et dans toute la
+          Côte-d'Or. Un seul interlocuteur, du premier conseil au service après-vente.
+        </p>
+        <div class="hero__actions">
+          <a href="#devis" class="btn btn--plein">Demander un devis</a>
+          <a href="tel:+33658008226" class="btn btn--clair">Appeler le <span data-cms="infos.telephone">06 58 00 82 26</span></a>
+        </div>
+
+        <!-- Repère du diaporama : une jauge par photo, comme celle du devis. -->
+        <div class="hero__repere" id="repereAccueil">
+          <div class="hero__jauge" role="group" aria-label="Choisir la photo affichée"></div>
+          <p class="hero__legende" aria-live="polite">
+            <span class="hero__legende-num">01 / 04</span>
+            <span class="hero__legende-texte">Portail coulissant — réalisation TDS Fermetures</span>
+            <span class="hero__legende-credit" hidden></span>
+          </p>
+          <button type="button" class="hero__pause">Pause</button>
+        </div>
+      </div>
+
+      <aside class="cartouche" aria-label="Fiche de l'entreprise">
+        <dl>
+          <dt>Dirigeant</dt><dd data-cms="cartouche.dirigeant">Tiago Dos Santos</dd>
+          <dt>Téléphone</dt><dd data-cms="infos.telephone">06 58 00 82 26</dd>
+          <dt>Métier</dt><dd data-cms="cartouche.metier">Fermetures &amp; automatismes</dd>
+          <dt>Après la pose</dt><dd data-cms="cartouche.sav">SAV réactif</dd>
+        </dl>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ===================== ENGAGEMENTS ===================== -->
+  <!-- Les quatre mots de la carte de visite. -->
+  <section class="section section--orange" id="engagements" aria-labelledby="titreEngagements">
+    <div class="wrap">
+      <h2 class="sr-only" id="titreEngagements">Nos engagements</h2>
+      <div class="engagements apparait" data-cms-list="engagements">
+        <div class="engagement">
+          <h3>Accompagnement</h3>
+          <p>Conseils sur le choix des produits, les dimensions et les options, avant de chiffrer quoi que ce soit.</p>
+        </div>
+        <div class="engagement">
+          <h3>Qualité</h3>
+          <p>Un devis détaillé qui dit précisément ce qui est posé : modèle, dimensions et options.</p>
+        </div>
+        <div class="engagement">
+          <h3>Pose soignée</h3>
+          <p>Prise de cotes, pose, réglages et finitions faits proprement, chantier laissé net.</p>
+        </div>
+        <div class="engagement">
+          <h3>SAV réactif</h3>
+          <p>Un réglage, une panne de motorisation, une question : un seul numéro à appeler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRESTATIONS ===================== -->
+  <section class="section" id="prestations">
+    <div class="wrap">
+      <div class="tete">
+        <span class="annot apparait">Prestations</span>
+        <h2 class="apparait d1" data-cms="prestations.titre">Tout ce qui ferme la maison</h2>
+        <p class="apparait d1" data-cms="prestations.texte">
+          Des fenêtres au portail, de la porte d'entrée à la porte de garage,
+          jusqu'aux automatismes et visiophones qui les commandent.
+        </p>
+      </div>
+
+      <div class="metiers metiers--quatre apparait d1" data-cms-list="prestations.liste">
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">01</span>
+            <h3>Fenêtres</h3>
+            <p>Fenêtres et portes-fenêtres, en rénovation ou en neuf. Prise de cotes, pose, étanchéité et réglages.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">02</span>
+            <h3>Volets roulants</h3>
+            <p>Manuels ou motorisés, en rénovation sur fenêtre existante ou avec une menuiserie neuve.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">03</span>
+            <h3>Portes</h3>
+            <p>Portes d'entrée et de service : choix du modèle, pose, réglage de la fermeture.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">04</span>
+            <h3>Portails &amp; clôtures</h3>
+            <p>Portails battants ou coulissants, portillons et clôtures, avec ou sans motorisation.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">05</span>
+            <h3>Portes de garage</h3>
+            <p>Sectionnelles, enroulables ou battantes, motorisées avec télécommande.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">06</span>
+            <h3>Pergolas</h3>
+            <p>Pour abriter une terrasse : étude de l'emplacement, des dimensions et des options.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">07</span>
+            <h3>Automatismes</h3>
+            <p>Motorisation de portails, de portes de garage et de volets, télécommandes et commandes centralisées.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">08</span>
+            <h3>Visiophones</h3>
+            <p>Voir qui sonne, lui parler et ouvrir le portail à distance.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RÉALISATION ===================== -->
+  <!-- Première réalisation de TDS Fermetures (portail posé et photographié
+       par l'entreprise). Le panneau à lames coulisse comme un portail
+       pour dévoiler la photo, puis un cadre orange désigne l'ouvrage.
+       Sans JavaScript ou en mouvement réduit : la photo et le cadre
+       s'affichent directement. -->
+  <section class="section section--encre rea" id="realisation" aria-labelledby="titreRealisation">
+    <div class="grille-plan" aria-hidden="true"></div>
+    <div class="wrap-large">
+      <div class="tete tete--large rea__tete">
+        <div>
+          <span class="annot apparait">Réalisation</span>
+          <h2 class="apparait d1" id="titreRealisation" data-cms="realisation.titre">Un portail coulissant, posé par Tiago Dos Santos</h2>
+        </div>
+        <p class="apparait d1" data-cms="realisation.texte">
+          Lames verticales pleines, teinte anthracite, coulissement le long du
+          mur : un portail sobre qui ferme la propriété sans alourdir la façade.
+        </p>
+      </div>
+
+      <figure class="rea__figure" id="figureRealisation">
+        <div class="rea__photo">
+        <img src="assets/images/realisation-portail-coulissant.jpg"
+             srcset="assets/images/realisation-portail-coulissant-960.jpg 960w, assets/images/realisation-portail-coulissant.jpg 1672w"
+             sizes="(max-width: 1440px) 100vw, 1392px"
+             data-cms-image="realisation.image" data-cms="realisation.alt" data-cms-attr="alt"
+             alt="Portail coulissant anthracite à lames verticales posé par TDS Fermetures devant une maison contemporaine"
+             width="1672" height="941" loading="lazy" decoding="async">
+        <div class="rea__cadre" id="cadreRealisation" style="left:52.5%;top:45.9%;width:27.3%;height:21.1%;" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+          <span class="rea__etiquette" data-cms="realisation.etiquette">Réalisation TDS Fermetures</span>
+        </div>
+        <div class="rea__portail" aria-hidden="true">
+          <span class="rea__poignee"></span>
+          <span class="rea__marque">TDS Fermetures</span>
+        </div>
+        </div>
+        <figcaption class="rea__legende">
+          <span data-cms="realisation.legende">Portail coulissant anthracite</span>
+          <span>Réalisation TDS Fermetures</span>
+        </figcaption>
+      </figure>
+
+      <div class="rea__actions apparait">
+        <a href="#devis" class="btn btn--plein"><span class="rea__cta-long">Un projet de portail ?&nbsp;</span>Demander un devis</a>
+        <a href="tel:+33658008226" class="btn btn--clair">Appeler le 06 58 00 82 26</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EN IMAGES ===================== -->
+  <!-- Photos du fabricant FenêtréA, fournies par TDS Fermetures. Ce ne sont
+       pas des chantiers de l'entreprise : la mention sous la galerie le dit.
+       Les photos de chantiers viendront s'ajouter dans content/site.json. -->
+  <section class="section section--papier2" id="chantiers">
+    <div class="wrap">
+      <div class="tete tete--large">
+        <div>
+          <span class="annot apparait">En images</span>
+          <h2 class="apparait d1" data-cms="chantiers.titre">Fenêtres, baies et portes d'entrée</h2>
+        </div>
+        <p class="apparait d1" data-cms="chantiers.texte">
+          Un aperçu des produits : formes, coloris, vitrages et poignées. Le modèle,
+          les dimensions et les options se choisissent ensemble, au moment du devis.
+        </p>
+      </div>
+
+      <div class="filtres apparait d1" role="group" aria-label="Filtrer les photos">
+        <button type="button" class="filtre" data-filtre="tout" aria-pressed="true">Tout</button>
+        <button type="button" class="filtre" data-filtre="fermetures" aria-pressed="false">Fenêtres &amp; volets</button>
+        <button type="button" class="filtre" data-filtre="coulissants" aria-pressed="false">Baies coulissantes</button>
+        <button type="button" class="filtre" data-filtre="portes" aria-pressed="false">Portes d'entrée</button>
+        <button type="button" class="filtre" data-filtre="exterieur" aria-pressed="false">Portails</button>
+      </div>
+
+      <div class="galerie apparait d2" id="galerie" data-cms-list="chantiers.ouvrages">
+        <button type="button" data-format="paysage" class="oeuvre oeuvre--paysage" data-categorie="exterieur" data-credit="Réalisation TDS Fermetures">
+          <img src="assets/images/realisation-portail-coulissant-960.jpg" alt="Portail coulissant anthracite à lames verticales posé par TDS Fermetures" style="object-position: 66% 50%;" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Portail coulissant</span>
+            <span class="oeuvre__meta">Réalisation TDS Fermetures</span>
+          </span>
+        </button>
+        <button type="button" data-format="portrait" class="oeuvre" data-categorie="fermetures" data-credit="Photo FenêtréA">
+          <img src="assets/images/fenetre-facade-grise.jpg" alt="Façade grise, fenêtres blanches et volets battants anthracite" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Fenêtres et volets battants</span>
+            <span class="oeuvre__meta">Façade</span>
+          </span>
+        </button>
+        <button type="button" data-format="portrait" class="oeuvre" data-categorie="coulissants" data-credit="Photo FenêtréA">
+          <img src="assets/images/baie-coulissante-terrasse.jpg" alt="Grande baie coulissante ouverte sur une terrasse fleurie" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Baie coulissante</span>
+            <span class="oeuvre__meta">Ouverture sur terrasse</span>
+          </span>
+        </button>
+        <button type="button" data-format="paysage" class="oeuvre oeuvre--paysage" data-categorie="fermetures" data-credit="Photo FenêtréA">
+          <img src="assets/images/fenetre-chambre.jpg" alt="Fenêtre à cadre noir dans une chambre sous combles" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Fenêtre</span>
+            <span class="oeuvre__meta">Chambre sous combles</span>
+          </span>
+        </button>
+        <button type="button" data-format="portrait" class="oeuvre" data-categorie="portes" data-credit="Photo FenêtréA">
+          <img src="assets/images/porte-rouge.jpg" alt="Porte d&#39;entrée rouge avec vitrage décoratif, vue depuis l&#39;intérieur" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Porte d&#39;entrée</span>
+            <span class="oeuvre__meta">Rouge · vitrage décoratif</span>
+          </span>
+        </button>
+        <button type="button" data-format="portrait" class="oeuvre" data-categorie="fermetures" data-credit="Photo FenêtréA">
+          <img src="assets/images/fenetre-cuisine.jpg" alt="Fenêtre à cadre noir au-dessus d&#39;un îlot de cuisine" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Fenêtre</span>
+            <span class="oeuvre__meta">Cuisine</span>
+          </span>
+        </button>
+        <button type="button" data-format="paysage" class="oeuvre oeuvre--paysage" data-categorie="portes" data-credit="Photo FenêtréA">
+          <img src="assets/images/porte-grise-inox.jpg" alt="Porte d&#39;entrée grise avec longue poignée inox, entrée de maison contemporaine" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Porte d&#39;entrée</span>
+            <span class="oeuvre__meta">Grise · poignée inox</span>
+          </span>
+        </button>
+        <button type="button" data-format="portrait" class="oeuvre" data-categorie="coulissants" data-credit="Photo FenêtréA">
+          <img src="assets/images/baie-coulissante-sejour.jpg" alt="Baie coulissante blanche entre un séjour lumineux et le jardin" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Baie coulissante</span>
+            <span class="oeuvre__meta">Séjour lumineux</span>
+          </span>
+        </button>
+        <button type="button" data-format="portrait" class="oeuvre" data-categorie="portes" data-credit="Photo FenêtréA">
+          <img src="assets/images/porte-bleue.jpg" alt="Porte d&#39;entrée bleue à petits inserts vitrés, façade en pierre" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Porte d&#39;entrée</span>
+            <span class="oeuvre__meta">Bleue · inserts vitrés</span>
+          </span>
+        </button>
+        <button type="button" data-format="paysage" class="oeuvre oeuvre--paysage" data-categorie="fermetures" data-credit="Photo FenêtréA">
+          <img src="assets/images/fenetre-facade-volets.jpg" alt="Fenêtre blanche encadrée de volets battants verts sur une façade claire" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Fenêtre</span>
+            <span class="oeuvre__meta">Volets battants</span>
+          </span>
+        </button>
+        <button type="button" data-format="portrait" class="oeuvre" data-categorie="portes" data-credit="Photo FenêtréA">
+          <img src="assets/images/porte-grise-vitrage.jpg" alt="Porte d&#39;entrée grise à vitrage ondulé, vue depuis l&#39;intérieur" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Porte d&#39;entrée</span>
+            <span class="oeuvre__meta">Grise · vitrage ondulé</span>
+          </span>
+        </button>
+        <button type="button" data-format="portrait" class="oeuvre" data-categorie="coulissants" data-credit="Photo FenêtréA">
+          <img src="assets/images/baie-coulissante-poignee.jpg" alt="Gros plan sur la poignée blanche d&#39;une baie coulissante" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Baie coulissante</span>
+            <span class="oeuvre__meta">Détail de la poignée</span>
+          </span>
+        </button>
+        <button type="button" data-format="paysage" class="oeuvre oeuvre--paysage" data-categorie="portes" data-credit="Photo FenêtréA">
+          <img src="assets/images/porte-anthracite-bois.jpg" alt="Porte d&#39;entrée anthracite entre deux pans de bardage bois" loading="lazy" decoding="async">
+          <span class="oeuvre__voile">
+            <span class="oeuvre__titre">Porte d&#39;entrée</span>
+            <span class="oeuvre__meta">Anthracite · bardage bois</span>
+          </span>
+        </button>
+      </div>
+
+      <p class="note-honnete apparait" data-cms="chantiers.mention" data-cms-optional>
+        Portail coulissant : réalisation TDS Fermetures. Autres photos : FenêtréA,
+        fabricant — modèles présentés à titre d'exemple.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== TVA RÉDUITE ===================== -->
+  <!-- TDS Fermetures n'est pas qualifiée RGE : la section parle des taux de
+       TVA, qui n'exigent pas de RGE, et dit clairement que les primes ne sont
+       pas mobilisables. -->
+  <section class="section" id="aides">
+    <div class="wrap">
+      <div class="tete">
+        <span class="annot apparait">TVA réduite</span>
+        <h2 class="apparait d1" data-cms="aides.titre">Une TVA réduite sur vos travaux</h2>
+        <p class="apparait d1" data-cms="aides.texte">
+          Dans un logement achevé depuis plus de deux ans, la fourniture et la pose
+          peuvent être facturées à 10 % ou à 5,5 % au lieu de 20 %. Le taux retenu
+          pour votre chantier figure sur le devis.
+        </p>
+      </div>
+
+      <div class="metiers metiers--quatre apparait d1" data-cms-list="aides.dispositifs">
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">TVA 20 %</span>
+            <h3>Construction neuve et autres cas</h3>
+            <p>Le taux normal de 20 % s'applique notamment aux travaux réalisés dans une construction neuve, un logement achevé depuis moins de deux ans, un local professionnel, ainsi qu'aux produits vendus sans pose.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">TVA 10 %</span>
+            <h3>Amélioration et entretien</h3>
+            <p>Remplacement ou pose dans un logement achevé depuis plus de deux ans, produits fournis et posés par l'entreprise.</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">TVA 5,5 %</span>
+            <h3>Rénovation énergétique</h3>
+            <p>Même logement, en remplacement de fenêtres ou portes-fenêtres existantes, avec des produits qui atteignent les performances thermiques exigées (voir ci‑dessous).</p>
+          </div>
+        </article>
+        <article class="metier" data-tilt>
+          <div class="metier__profondeur">
+            <span class="metier__num">Primes et éco‑PTZ</span>
+            <h3>Réservés aux entreprises RGE</h3>
+            <p>MaPrimeRénov', primes CEE et éco‑PTZ exigent une entreprise qualifiée RGE, ce que TDS Fermetures n'est pas à ce jour.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="aides__detail apparait d2">
+        <figure class="aides__produit">
+          <img src="assets/images/fenetre-deux-vantaux.jpg" alt="Fenêtre deux vantaux à cadre noir, vue de l'extérieur" width="816" height="1000" loading="lazy" decoding="async">
+          <figcaption>Photo FenêtréA</figcaption>
+        </figure>
+        <div>
+          <span class="bloc-info__label">Les critères techniques</span>
+          <p>
+            Pour la TVA à 5,5 %, une fenêtre ou une porte-fenêtre posée en
+            remplacement d'une menuiserie existante doit atteindre
+            <strong>Uw ≤ 1,3 W/m²·K avec Sw ≥ 0,3</strong>, ou
+            <strong>Uw ≤ 1,7 W/m²·K avec Sw ≥ 0,36</strong>. Ces valeurs figurent
+            sur la fiche technique du fabricant.
+          </p>
+        </div>
+        <div>
+          <span class="bloc-info__label">Qualification de l'entreprise</span>
+          <p data-cms="aides.qualification">
+            TDS Fermetures n'est pas qualifiée RGE. Les taux de TVA réduits ne
+            l'exigent pas : ils dépendent de l'âge du logement, de la nature des travaux et des produits posés.
+          </p>
+        </div>
+      </div>
+
+      <p class="note-honnete apparait" data-cms="aides.mention">
+        Taux et conditions fixés par la loi, susceptibles d'évoluer : le devis
+        précise le taux applicable après vérification. Pour les aides à la
+        rénovation, le service public France Rénov' vous renseigne gratuitement
+        (france-renov.gouv.fr, 0 808 800 700).
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== L'ENTREPRISE ===================== -->
+  <section class="section section--papier2" id="entreprise">
+    <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;" data-split>
+      <figure class="apparait entreprise__logo" style="margin:0;">
+        <img src="assets/logo/tds-fermetures.svg" data-cms-image="images.entreprise"
+             alt="Logo TDS Fermetures" width="240" height="196" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <span class="annot apparait">L'entreprise</span>
+        <h2 class="apparait d1" data-cms="entreprise.titre">Un seul interlocuteur</h2>
+        <p class="apparait d1" data-cms="entreprise.paragraphe_1">
+          TDS Fermetures, c'est Tiago Dos Santos. C'est lui que vous appelez pour
+          un conseil, un devis ou le service après-vente — pas un standard.
+        </p>
+        <p class="apparait d2" data-cms="entreprise.paragraphe_2">
+          Basée à Dijon, TDS Fermetures intervient dans toute la Côte-d'Or, avec
+          la même exigence de pose pour chaque porte, fenêtre, volet ou portail.
+        </p>
+        <div class="apparait d2 entreprise__actions" style="margin-top:30px;display:grid;grid-template-columns:minmax(0,max-content);gap:12px;">
+          <a href="#devis" class="btn btn--plein">Parler de votre projet</a>
+          <a href="tel:+33658008226" class="btn">Appeler le 06 58 00 82 26</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DÉROULÉ ===================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="tete tete--centre">
+        <span class="annot apparait">Déroulé</span>
+        <h2 class="apparait d1" data-cms="processus.titre">Comment ça se passe</h2>
+      </div>
+      <div class="etapes apparait d1" data-cms-list="processus.etapes">
+        <div class="etape">
+          <span class="etape__num">Étape 01</span>
+          <h3>Premier contact</h3>
+          <p>Par téléphone ou avec le formulaire : vous décrivez votre projet.</p>
+        </div>
+        <div class="etape">
+          <span class="etape__num">Étape 02</span>
+          <h3>Visite et conseils</h3>
+          <p>Prise de cotes sur place et choix des produits, des coloris et des options.</p>
+        </div>
+        <div class="etape">
+          <span class="etape__num">Étape 03</span>
+          <h3>Devis détaillé</h3>
+          <p>Fourniture, pose et options chiffrées séparément, pour savoir ce que vous payez.</p>
+        </div>
+        <div class="etape">
+          <span class="etape__num">Étape 04</span>
+          <h3>Pose et suivi</h3>
+          <p>Pose, mise en service des automatismes, explications, puis SAV si besoin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEVIS ===================== -->
+  <section class="section section--encre" id="devis">
+    <div class="grille-plan" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="tete">
+        <span class="annot apparait">Devis</span>
+        <h2 class="apparait d1" data-cms="devis.titre">Votre demande de devis</h2>
+        <p class="apparait d1" data-cms="devis.texte">
+          Quatre étapes, deux minutes. Le site rédige votre demande, puis vous
+          l'envoyez à TDS Fermetures depuis votre messagerie.
+        </p>
+      </div>
+
+      <div class="devis">
+        <form id="formDevis" class="apparait d1" novalidate>
+          <noscript><p class="devis__note">Ce formulaire a besoin de JavaScript : appelez le 06 58 00 82 26 ou écrivez à <a href="mailto:tiagotdsfermetures.21@hotmail.com">tiagotdsfermetures.21@hotmail.com</a>.</p></noscript>
+          <div class="devis__jauge" aria-hidden="true">
+            <span class="est-faite"></span><span></span><span></span><span></span>
+          </div>
+          <p id="etapeCourante" aria-live="polite" class="sr-only">Étape 1 sur 4</p>
+
+          <!-- Piège à robots : invisible pour un visiteur, rempli par les
+               robots qui remplissent tout. Une demande qui le remplit est
+               ignorée. -->
+          <div class="piege" aria-hidden="true">
+            <label for="siteWeb">Ne pas remplir</label>
+            <input type="text" id="siteWeb" name="_honey" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- Étape 1 -->
+          <fieldset class="volet est-active" data-volet="1" style="border:0;padding:0;margin:0;">
+            <legend class="volet__titre">01 — Votre projet</legend>
+            <div class="choix">
+              <label><input type="radio" name="ouvrage" value="Fenêtres" required> Fenêtres
+                <span class="choix__note">Remplacement ou neuf</span></label>
+              <label><input type="radio" name="ouvrage" value="Volets roulants"> Volets roulants
+                <span class="choix__note">Manuels ou motorisés</span></label>
+              <label><input type="radio" name="ouvrage" value="Porte d'entrée"> Porte d'entrée
+                <span class="choix__note">Ou porte de service</span></label>
+              <label><input type="radio" name="ouvrage" value="Portail ou clôture"> Portail, clôture
+                <span class="choix__note">Battant, coulissant</span></label>
+              <label><input type="radio" name="ouvrage" value="Porte de garage"> Porte de garage
+                <span class="choix__note">Sectionnelle, enroulable</span></label>
+              <label><input type="radio" name="ouvrage" value="Pergola"> Pergola
+                <span class="choix__note">Terrasse</span></label>
+              <label><input type="radio" name="ouvrage" value="Automatisme"> Automatisme
+                <span class="choix__note">Motoriser l'existant</span></label>
+              <label><input type="radio" name="ouvrage" value="Visiophone"> Visiophone
+                <span class="choix__note">Portail, entrée</span></label>
+              <label><input type="radio" name="ouvrage" value="Service après-vente"> SAV
+                <span class="choix__note">Réglage, réparation</span></label>
+            </div>
+            <p class="champ__erreur" id="ouvrageErreur" aria-live="polite"></p>
+          </fieldset>
+
+          <!-- Étape 2 -->
+          <fieldset class="volet" data-volet="2" style="border:0;padding:0;margin:0;">
+            <legend class="volet__titre">02 — Le détail</legend>
+            <div class="duo">
+              <div class="champ">
+                <label for="quantite">Quantité ou dimensions</label>
+                <input type="text" id="quantite" name="quantite" maxlength="80" placeholder="ex. 4 fenêtres, portail 3,5 m">
+              </div>
+              <div class="champ">
+                <label for="motorisation">Motorisation</label>
+                <select id="motorisation" name="motorisation">
+                  <option value="Non précisé">Je ne sais pas</option>
+                  <option value="Oui">Oui, motorisé</option>
+                  <option value="Non">Non, manuel</option>
+                  <option value="Sans objet">Sans objet</option>
+                </select>
+              </div>
+            </div>
+            <div class="duo">
+              <div class="champ">
+                <label for="typePose">Type de projet</label>
+                <select id="typePose" name="typePose">
+                  <option value="Non précisé">Je ne sais pas</option>
+                  <option value="Remplacement de l'existant">Remplacement de l'existant</option>
+                  <option value="Construction neuve ou extension">Construction neuve ou extension</option>
+                  <option value="Réglage ou réparation (SAV)">Réglage ou réparation (SAV)</option>
+                </select>
+              </div>
+              <div class="champ">
+                <label for="anciennete">Âge du logement</label>
+                <select id="anciennete" name="anciennete">
+                  <option value="Non précisé">Je ne sais pas</option>
+                  <option value="Plus de 2 ans">Plus de 2 ans</option>
+                  <option value="Moins de 2 ans">Moins de 2 ans</option>
+                </select>
+              </div>
+            </div>
+            <div class="champ">
+              <label for="details">Décrivez votre projet</label>
+              <textarea id="details" name="details" rows="3" maxlength="600" placeholder="Matériau, coloris, accès, état de l'existant…"></textarea>
+            </div>
+          </fieldset>
+
+          <!-- Étape 3 -->
+          <fieldset class="volet" data-volet="3" style="border:0;padding:0;margin:0;">
+            <legend class="volet__titre">03 — Délai et lieu</legend>
+            <div class="champ">
+              <label for="delai">Pour quand ?</label>
+              <select id="delai" name="delai">
+                <option value="Non précisé">Je ne sais pas encore</option>
+                <option value="Dès que possible">Dès que possible</option>
+                <option value="Sous 3 mois">Dans les 3 mois</option>
+                <option value="Sous 6 mois">Dans les 6 mois</option>
+                <option value="Plus tard">Plus tard, je me renseigne</option>
+              </select>
+            </div>
+            <div class="champ">
+              <label for="budget">Budget envisagé</label>
+              <select id="budget" name="budget">
+                <option value="Non défini">Je ne sais pas encore</option>
+                <option value="Moins de 3 000 €">Moins de 3 000 €</option>
+                <option value="3 000 à 8 000 €">3 000 à 8 000 €</option>
+                <option value="8 000 à 15 000 €">8 000 à 15 000 €</option>
+                <option value="Plus de 15 000 €">Plus de 15 000 €</option>
+              </select>
+            </div>
+            <div class="champ">
+              <label for="adresseChantier">Commune</label>
+              <input type="text" id="adresseChantier" name="adresseChantier" maxlength="80" autocomplete="address-level2" placeholder="Votre commune">
+            </div>
+          </fieldset>
+
+          <!-- Étape 4 -->
+          <fieldset class="volet" data-volet="4" style="border:0;padding:0;margin:0;">
+            <legend class="volet__titre">04 — Vos coordonnées</legend>
+            <div class="duo">
+              <div class="champ">
+                <label for="nom">Nom <span class="obl">*</span></label>
+                <input type="text" id="nom" name="nom" maxlength="80" required aria-describedby="nomErreur" autocomplete="name" placeholder="Votre nom">
+                <p class="champ__erreur" id="nomErreur" aria-live="polite"></p>
+              </div>
+              <div class="champ">
+                <label for="courriel">E-mail <span class="obl">*</span></label>
+                <input type="email" id="courriel" name="courriel" maxlength="120" required aria-describedby="courrielErreur" autocomplete="email" placeholder="vous@exemple.fr">
+                <p class="champ__erreur" id="courrielErreur" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="champ">
+              <label for="telephone">Téléphone <span class="obl">*</span></label>
+              <input type="tel" id="telephone" name="telephone" required aria-describedby="telephoneErreur" autocomplete="tel"
+                     pattern="^[0-9+\(\)\s.\-]{6,20}$" placeholder="06 12 34 56 78">
+              <p class="champ__erreur" id="telephoneErreur" aria-live="polite"></p>
+            </div>
+            <p class="devis__note">
+              Votre demande est préparée par le site et envoyée depuis votre propre
+              messagerie à TDS Fermetures, uniquement pour vous répondre, établir
+              un devis ou assurer le service après-vente. Vous pouvez y accéder, la rectifier ou la faire effacer en
+              écrivant à tiagotdsfermetures.21@hotmail.com. Durée de conservation,
+              droits et réclamation auprès de la CNIL : voir la
+              <a href="politique-de-confidentialite.html">politique de confidentialité</a>.
+            </p>
+          </fieldset>
+
+          <div class="devis__pied">
+            <button type="button" class="btn" id="precedent" hidden>Précédent</button>
+            <button type="button" class="btn btn--plein" id="suivant">Suivant</button>
+            <button type="submit" class="btn btn--plein" id="envoyer" hidden>Préparer ma demande</button>
+            <p class="devis__etat" id="etatDevis" role="status" aria-live="polite"></p>
+          </div>
+          <div class="devis__secours" id="secoursDevis" hidden>
+            <p>Il ne reste qu'à l'envoyer : le bouton ci‑dessous ouvre votre
+              messagerie avec l'e-mail déjà rédigé pour TDS Fermetures. Vérifiez-le,
+              puis envoyez-le.</p>
+            <div class="devis__secours-actions">
+              <a class="btn btn--plein" id="secoursMail" href="#">Ouvrir ma messagerie</a>
+              <a class="btn btn--clair" href="tel:+33658008226">Appeler le 06 58 00 82 26</a>
+            </div>
+            <p class="devis__secours-aide">Rien ne s'ouvre ? Écrivez à
+              <a href="mailto:tiagotdsfermetures.21@hotmail.com">tiagotdsfermetures.21@hotmail.com</a>
+              ou appelez directement Tiago.</p>
+            <p class="devis__secours-aide" id="copieBloc" hidden><button type="button" class="lien-bouton" id="copieDevis">Copier ma demande</button>
+              pour la coller dans votre e-mail. <span id="copieEtat" role="status"></span></p>
+          </div>
+        </form>
+
+        <div class="devis__merci" id="merciDevis" tabindex="-1" hidden>
+          <h3>Merci, votre demande est bien partie.</h3>
+          <p>TDS Fermetures l'a reçue par e-mail et vous recontactera. Pour une
+            urgence, appelez le <a href="tel:+33658008226">06 58 00 82 26</a>.</p>
+        </div>
+
+        <aside class="devis__aparte apparait d2">
+          <h3 data-cms="devis.aparte_titre">Ce qui vous attend</h3>
+          <ul data-cms-list="devis.garanties">
+            <li><span>01</span><div><strong>Un vrai échange.</strong> Vos besoins d'abord, les produits ensuite.</div></li>
+            <li><span>02</span><div><strong>Une visite sur place.</strong> Pour prendre les cotes exactes avant de chiffrer.</div></li>
+            <li><span>03</span><div><strong>Un devis détaillé.</strong> Fourniture, pose et options séparées.</div></li>
+            <li><span>04</span><div><strong>Un SAV réactif.</strong> Le même numéro après la pose.</div></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AVIS ===================== -->
+  <!-- Masquée tant qu'aucun avis réel n'est saisi dans content/site.json :
+       jamais d'avis inventé. -->
+  <section class="section" id="avis" hidden>
+    <div class="wrap">
+      <div class="tete tete--centre">
+        <span class="annot apparait">Avis</span>
+        <h2 class="apparait d1" data-cms="avis_titre">Ce qu'en disent les clients</h2>
+      </div>
+      <div class="avis-grille apparait d1" data-cms-list="avis"></div>
+      <p class="note-honnete" data-cms="avis_note" data-cms-optional></p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section section--papier2" id="infos">
+    <div class="wrap">
+      <div class="tete">
+        <span class="annot apparait">Contact</span>
+        <h2 class="apparait d1" data-cms="infos.titre">Nous joindre</h2>
+      </div>
+      <div class="infos-grille apparait d1">
+        <div class="bloc-info">
+          <span class="bloc-info__label">Téléphone</span>
+          <p>
+            <a class="lien-fort" href="tel:+33658008226" data-cms="infos.telephone" data-cms-lien="tel">06 58 00 82 26</a><br>
+            <span data-cms="cartouche.dirigeant">Tiago Dos Santos</span>
+          </p>
+        </div>
+        <div class="bloc-info">
+          <span class="bloc-info__label">E-mail</span>
+          <p>
+            <span class="bloc-info__sous">Clients</span><br>
+            <a href="mailto:tiagotdsfermetures.21@hotmail.com" data-cms="infos.email" data-cms-lien="mailto">tiagotdsfermetures.21@hotmail.com</a><br>
+            <span class="bloc-info__sous">Fournisseurs</span><br>
+            <a href="mailto:sarltdsfermetures.21@hotmail.com" data-cms="infos.email_fournisseurs" data-cms-lien="mailto">sarltdsfermetures.21@hotmail.com</a>
+          </p>
+        </div>
+        <div class="bloc-info">
+          <span class="bloc-info__label">Siège &amp; horaires</span>
+          <p>
+            <span data-cms="infos.adresse_1">24 rue Lavoisier</span><br>
+            <span data-cms="infos.adresse_2">21000 Dijon</span>
+          </p>
+          <table class="horaires" data-cms-list="infos.horaires">
+            <tr><td>Horaires</td><td>Sur rendez-vous</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="apparait d2" style="margin-top:44px;">
+        <span class="bloc-info__label">Zone d'intervention</span>
+        <div class="zone-liste" data-cms-list="infos.zones">
+          <span>Côte-d'Or (21)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== PIED ===================== -->
+<footer class="pied">
+  <div class="wrap-large">
+    <img class="pied__logo" src="assets/logo/tds-fermetures-clair.svg" alt="TDS Fermetures" width="170" height="139" loading="lazy">
+    <div class="pied__cols">
+      <div>
+        <h4>TDS Fermetures</h4>
+        <p style="max-width:340px;" data-cms="pied.texte">
+          Porte, fenêtre, volet, portail, automatisme, visiophone.
+          Accompagnement, qualité, pose soignée, SAV réactif.
+        </p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#prestations">Prestations</a></li>
+          <li><a href="#chantiers">En images</a></li>
+          <li><a href="#aides">TVA réduite</a></li>
+          <li><a href="#devis">Demander un devis</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+33658008226" data-cms="infos.telephone" data-cms-lien="tel">06 58 00 82 26</a></li>
+          <li><a href="mailto:tiagotdsfermetures.21@hotmail.com" data-cms="infos.email" data-cms-lien="mailto">tiagotdsfermetures.21@hotmail.com</a></li>
+        </ul>
+        <ul data-cms-list="pied.reseaux" class="pied__reseaux">
+          <li><a href="https://www.facebook.com/share/19ZKpWqVXY/" rel="noopener" target="_blank">Facebook : TDS Fermetures</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pied__bas">
+      <span>&copy; <span id="annee">2026</span> <span data-cms="marque.nom">TDS Fermetures</span> — Entreprise artisanale, SARL au capital de 5 000 € — RCS Dijon 108 023 805 — 24 rue Lavoisier, 21000 Dijon</span>
+      <div class="pied__legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== VISIONNEUSE ===================== -->
+<div class="visionneuse" id="visionneuse" role="dialog" aria-modal="true" aria-label="Photo en grand">
+  <button type="button" class="visionneuse__fermer" data-fermer-visionneuse>Fermer</button>
+  <button type="button" class="visionneuse__nav visionneuse__nav--prec" data-visionneuse-prec aria-label="Photo précédente">←</button>
+  <button type="button" class="visionneuse__nav visionneuse__nav--suiv" data-visionneuse-suiv aria-label="Photo suivante">→</button>
+  <figure>
+    <img id="visionneuseImage" alt="">
+    <figcaption id="visionneuseLegende"></figcaption>
+  </figure>
+</div>
+
+<div class="appel-mobile">
+  <a href="tel:+33658008226" class="btn btn--sombre">Appeler</a>
+  <a href="#devis" class="btn btn--plein">Demander un devis</a>
+</div>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
