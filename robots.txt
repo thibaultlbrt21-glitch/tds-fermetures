@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thibaultlbrt21-glitch.github.io/Template-sites-internets/tds-fermetures/sitemap.xml
+Sitemap: https://tds-fermetures.fr/sitemap.xml
