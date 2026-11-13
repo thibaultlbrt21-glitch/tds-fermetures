@@ -10,16 +10,13 @@
     // qui l'emporte.
     devisEmail: "tiagotdsfermetures.21@hotmail.com",
 
-    // Service qui transforme le formulaire en e-mail, par exemple
-    // FormSubmit : "https://formsubmit.co/ajax/" (à la toute première
-    // demande, il envoie à l'adresse ci-dessus un e-mail « Activate Form »
-    // sur lequel il faut cliquer une fois). Vide : aucun service tiers, la
-    // demande est préparée et le visiteur l'envoie depuis sa messagerie.
-    // Vide tant que le site n'est pas sur son domaine définitif ; à
-    // réactiver alors, en mettant à jour la politique de confidentialité,
-    // la mention sous le formulaire, la phrase d'introduction du devis
-    // (index.html et site.json) et la Content-Security-Policy.
-    serviceEnvoi: "",
+    // Script du site qui envoie la demande par e-mail à Tiago
+    // (envoi-devis.php, hébergé chez Hostinger : aucun service tiers).
+    // Vide : la demande est préparée et le visiteur l'envoie depuis sa
+    // messagerie. En le changeant, mettre à jour la politique de
+    // confidentialité, la mention sous le formulaire et la phrase
+    // d'introduction du devis (index.html et site.json).
+    serviceEnvoi: "envoi-devis.php",
 
     // Durée d'affichage de chaque photo de l'accueil, en millisecondes.
     dureePhoto: 6500
@@ -591,15 +588,14 @@
         return;
       }
 
-      var donnees = {
-        _subject: d.sujet,
-        _template: "table",
-        _captcha: "false",
-        // « email » : FormSubmit s'en sert comme adresse de réponse, pour que
-        // Tiago puisse répondre directement au client.
-        email: valeur("courriel")
-      };
-      d.lignes.forEach(function (l) { if (l[0] !== "E-mail") donnees[l[0]] = l[1]; });
+      // Les champs bruts : le script du serveur vérifie tout et rédige
+      // lui-même l'e-mail (destinataire fixé côté serveur).
+      var ouvrage = form.querySelector('input[name="ouvrage"]:checked');
+      var donnees = { ouvrage: ouvrage ? ouvrage.value : "" };
+      ["quantite", "motorisation", "typePose", "anciennete", "details", "delai", "budget",
+        "adresseChantier", "nom", "courriel", "telephone", "siteWeb"].forEach(function (id) {
+        donnees[id] = valeur(id);
+      });
 
       btnEnvoi.disabled = true;
       etat.textContent = "Envoi en cours…";
@@ -608,7 +604,7 @@
       var controle = window.AbortController ? new AbortController() : null;
       var minuteur = window.setTimeout(function () { if (controle) controle.abort(); }, 15000);
 
-      fetch(SITE_CONFIG.serviceEnvoi + encodeURIComponent(destinataire()), {
+      fetch(SITE_CONFIG.serviceEnvoi, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(donnees),
@@ -619,8 +615,8 @@
         })
         .then(function (res) {
           window.clearTimeout(minuteur);
-          // FormSubmit répond { success: "true" } quand l'e-mail est parti.
-          if (res.ok && String(res.j.success) === "true") reussite();
+          // Le script répond { ok: true } quand l'e-mail est parti.
+          if (res.ok && res.j.ok === true) reussite();
           else proposeMessagerie(d, "L'envoi automatique n'a pas abouti.");
         })
         .catch(function () {

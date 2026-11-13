@@ -280,7 +280,7 @@
   },
   "devis": {
     "titre": "Votre demande de devis",
-    "texte": "Quatre étapes, deux minutes. Le site rédige votre demande, puis vous l'envoyez à TDS Fermetures depuis votre messagerie.",
+    "texte": "Quatre étapes, deux minutes. Votre demande arrive directement chez TDS Fermetures, qui vous recontacte.",
     "email_reception": "tiagotdsfermetures.21@hotmail.com",
     "aparte_titre": "Ce qui vous attend",
     "garanties": [
