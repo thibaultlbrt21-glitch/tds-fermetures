@@ -22,18 +22,19 @@ RedirectMatch 404 \.md$
   Header always set Strict-Transport-Security "max-age=31536000"
 </IfModule>
 
-# Cache : photos et icônes un mois ; feuilles de style, scripts et contenu
-# une heure, pour que les modifications apparaissent vite
+# Cache : photos et icônes un mois. Pages, feuilles de style, scripts et
+# contenu : le navigateur redemande toujours au serveur s'ils ont changé
+# (une mise à jour du site est donc visible tout de suite).
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/svg+xml "access plus 1 month"
-  ExpiresByType text/css "access plus 1 hour"
-  ExpiresByType application/javascript "access plus 1 hour"
-  ExpiresByType text/javascript "access plus 1 hour"
-  ExpiresByType application/json "access plus 1 hour"
-  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>
 
 # Compression
