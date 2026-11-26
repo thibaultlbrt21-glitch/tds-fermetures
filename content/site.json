@@ -36,7 +36,7 @@
     ]
   },
   "cartouche": {
-    "dirigeant": "Tiago Dos Santos",
+    "entreprise": "TDS Fermetures",
     "metier": "Fermetures & automatismes",
     "sav": "SAV réactif"
   },
@@ -254,7 +254,7 @@
   },
   "entreprise": {
     "titre": "Un seul interlocuteur",
-    "paragraphe_1": "TDS Fermetures, c'est Tiago Dos Santos. C'est lui que vous appelez pour un conseil, un devis ou le service après-vente — pas un standard.",
+    "paragraphe_1": "Chez TDS Fermetures, c'est le même interlocuteur que vous appelez pour un conseil, un devis ou le service après-vente — pas un standard.",
     "paragraphe_2": "Basée à Dijon, TDS Fermetures intervient dans toute la Côte-d'Or, avec la même exigence de pose pour chaque porte, fenêtre, volet ou portail."
   },
   "processus": {
@@ -332,7 +332,7 @@
     ]
   },
   "realisation": {
-    "titre": "Un portail coulissant, posé par Tiago Dos Santos",
+    "titre": "Un portail coulissant, posé par TDS Fermetures",
     "texte": "Lames verticales pleines, teinte anthracite, coulissement le long du mur : un portail sobre qui ferme la propriété sans alourdir la façade.",
     "image": "assets/images/realisation-portail-coulissant.jpg",
     "alt": "Portail coulissant anthracite à lames verticales posé par TDS Fermetures devant une maison contemporaine",
