@@ -118,7 +118,7 @@ html { scroll-padding-top: 96px; }
 .section--encre p { color: var(--texte-doux-sur-encre); }
 .section--papier2 { background: var(--papier-2); }
 
-/* Annotation technique — la signature typographique du template. */
+/* Surtitre de l'accueil (zone et métiers). */
 .annot {
   display: inline-flex; align-items: center; gap: 9px;
   font-family: var(--font-mono);
@@ -126,26 +126,13 @@ html { scroll-padding-top: 96px; }
   color: var(--plan-texte);
   margin: 0 0 18px;
 }
-.annot::before {
-  content: ""; width: 26px; height: 1px; background: currentColor; flex: none;
-}
 .section--encre .annot { color: var(--plan-sur-encre); }
 
 .tete { max-width: 660px; margin-bottom: clamp(38px, 6vw, 62px); }
 .tete--centre { margin-left: auto; margin-right: auto; text-align: center; }
-.tete--centre .annot { justify-content: center; }
 .tete p { color: var(--texte-doux); font-size: 1.06rem; }
 .section--encre .tete p { color: var(--texte-doux-sur-encre); }
 
-/* Grille de plan, en fond des sections sombres. */
-.grille-plan {
-  position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
-  background-image:
-    linear-gradient(to right, rgba(243, 146, 0, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(243, 146, 0, 0.07) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 78%);
-}
 
 /* =========================================================================
    BOUTONS
@@ -297,7 +284,6 @@ html { scroll-padding-top: 96px; }
   background: linear-gradient(to bottom, rgba(35, 35, 34, 0.7), rgba(35, 35, 34, 0));
   pointer-events: none;
 }
-.hero .grille-plan { right: var(--visuel); opacity: 0.5; }
 
 .hero__visuel {
   position: absolute; top: 0; right: 0; bottom: 0; width: var(--visuel);
@@ -366,7 +352,6 @@ html { scroll-padding-top: 96px; }
 }
 .hero__jauge button[aria-current="true"]::before { background: var(--bois-sur-encre); }
 .hero__legende { margin: 0; display: flex; gap: 12px; flex-wrap: wrap; text-transform: uppercase; flex: 1 1 240px; }
-.hero__legende-num { color: var(--plan-sur-encre); }
 .hero__legende-texte { color: var(--papier); }
 .hero__legende-credit { color: var(--texte-doux-sur-encre); text-transform: none; letter-spacing: 0.04em; }
 .hero__pause {
@@ -377,27 +362,10 @@ html { scroll-padding-top: 96px; }
 }
 /* Une seule photo : rien à faire défiler. */
 .hero__repere.est-fixe .hero__jauge,
-.hero__repere.est-fixe .hero__legende-num,
 .hero__repere.est-fixe .hero__pause { display: none; }
 /* Aucune photo : le texte reprend toute la largeur. */
 .hero--sans-photo .hero__contenu > * { max-width: none; }
-.hero--sans-photo .grille-plan { right: 0; }
 
-/* Cartouche de plan : la « fiche technique » du hero. */
-.cartouche {
-  /* Aligné sur le bord droit du contenu de l'en-tête, même sur très grand écran. */
-  position: absolute; bottom: 40px; z-index: 5;
-  right: max(var(--gouttiere), calc((100vw - var(--largeur-large)) / 2 + var(--gouttiere)));
-  width: max-content;
-  border: 1px solid rgba(243, 146, 0, 0.45);
-  background: rgba(35, 35, 34, 0.86);
-  padding: 16px 20px; border-radius: var(--rayon);
-  font-family: var(--font-mono); font-size: 0.7rem; line-height: 1.9;
-  color: var(--plan-sur-encre); letter-spacing: 0.06em;
-}
-.cartouche dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; margin: 0; }
-.cartouche dt { color: rgba(247, 165, 52, 0.85); }
-.cartouche dd { margin: 0; color: var(--papier); text-align: right; }
 
 /* =========================================================================
    SAVOIR-FAIRE — cartes en relief 3D
@@ -413,7 +381,7 @@ html { scroll-padding-top: 96px; }
   background: var(--papier);
   border: 1px solid var(--ligne);
   border-radius: var(--rayon);
-  transition: transform 0.25s ease-out, box-shadow var(--transition), border-color var(--transition);
+  transition: box-shadow var(--transition), border-color var(--transition);
 }
 .metier__num {
   font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em;
@@ -586,11 +554,7 @@ html { scroll-padding-top: 96px; }
   background: var(--papier); border: 1px solid var(--bois);
 }
 .etape.est-vue::after { background: var(--bois); }
-.etape__num {
-  display: block; margin: 38px 0 12px;
-  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; color: var(--bois-texte);
-}
-.etape h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.etape h3 { font-size: 1.1rem; margin: 38px 0 8px; }
 .etape p { color: var(--texte-doux); font-size: 0.93rem; margin: 0; }
 
 /* =========================================================================
@@ -674,7 +638,6 @@ html { scroll-padding-top: 96px; }
   display: flex; gap: 13px;
 }
 .devis__aparte li strong { color: var(--papier); font-weight: 600; }
-.devis__aparte li span:first-child { color: var(--bois-sur-encre); font-family: var(--font-mono); font-size: 0.72rem; padding-top: 3px; }
 
 /* =========================================================================
    AVIS / INFOS / PIED
@@ -824,7 +787,7 @@ body.est-descendu .appel-mobile { transform: translateY(0); }
   .etape { padding: 0 0 4px; }
   .etape::before { display: none; }
   .etape::after { top: 26px; }
-  .etape__num { margin-top: 22px; padding-left: 24px; }
+  .etape h3 { margin-top: 22px; }
   .etape h3, .etape p { padding-left: 24px; }
 
   .pied__cols { grid-template-columns: 1fr; }
@@ -856,7 +819,6 @@ body.est-descendu .appel-mobile { transform: translateY(0); }
 .marque__logo { height: 60px; width: auto; transform-origin: left center; transition: transform var(--transition); }
 .entete.est-pose .marque__logo { transform: scale(0.84); }
 .hero .annot { color: var(--plan-sur-encre); }
-.cartouche dt, .cartouche dd { white-space: nowrap; }
 .entete:not(.est-pose) .marque { color: #fff; }
 .entete.est-pose { background: #fff; }
 .entete__tel {
@@ -884,9 +846,8 @@ body.est-descendu .appel-mobile { transform: translateY(0); }
 .engagement h3::before { content: "› "; font-weight: 900; }
 .engagement p { margin: 0; font-size: 0.95rem; color: #2c1a00; }
 
-/* Cartes de prestation : la pastille numérotée passe à l'orange. */
+/* Étiquette des cartes TVA (taux). */
 .metier__num { color: var(--bois-texte); }
-.metier { border-top: 3px solid var(--bois); }
 
 /* Contact. */
 .lien-fort { font-size: 1.5rem; font-weight: 800; color: var(--encre); text-decoration: none; }
@@ -910,10 +871,8 @@ body.est-descendu .appel-mobile { transform: translateY(0); }
   gap: 34px; align-items: start;
 }
 .aides__produit { align-self: center; }
-/* La carte « Primes et éco-PTZ » décrit une exclusion : liseré anthracite. */
-#aides .metier:last-child { border-top-color: var(--encre); }
 .aides__produit {
-  margin: 0; background: #fff; border: 1px solid var(--ligne); border-top: 3px solid var(--bois);
+  margin: 0; background: #fff; border: 1px solid var(--ligne);
   border-radius: var(--rayon); padding: 18px 18px 10px;
 }
 .aides__produit img { width: 100%; max-width: 240px; height: auto; margin: 0 auto; }
@@ -981,10 +940,6 @@ body.est-descendu .appel-mobile { transform: translateY(0); }
     background: linear-gradient(to bottom, rgba(35, 35, 34, 0.9) 0%, rgba(35, 35, 34, 0.8) 55%, rgba(35, 35, 34, 0.42) 100%);
   }
   .hero__contenu > * { max-width: 620px; }
-  .hero .grille-plan { display: none; }
-  /* Plus de place à côté du texte : le cartouche recouvrait la légende et
-     le bouton Pause du diaporama. */
-  .cartouche { display: none; }
 }
 @media (max-width: 860px) {
   .engagements { grid-template-columns: repeat(2, 1fr); }
@@ -1020,7 +975,6 @@ body.est-descendu .appel-mobile { transform: translateY(0); }
     transition-duration: 0.001ms !important;
   }
   .apparait { opacity: 1; transform: none; }
-  .metier { transform: none !important; }
 }
 
 /* =========================================================================
@@ -1065,7 +1019,10 @@ body.devis-visible .appel-mobile { transform: translateY(150%); }
   .entete { position: absolute; }
   .anim-portail .rea__portail { display: none; }
   .anim-portail .rea__photo img, .anim-portail .rea__cadre i, .anim-portail .rea__etiquette { opacity: 1; transform: none; }
-  .hero__repere, .appel-mobile, .visionneuse, .devis__pied, .filtres, .burger, .cartouche, .grille-plan { display: none !important; }
+  .hero__repere, .appel-mobile, .visionneuse, .devis__pied, .filtres, .burger { display: none !important; }
   .hero, .section--encre, .pied { background: #fff !important; color: #232322 !important; }
   .hero h1, .hero__texte, .section--encre h2, .section--encre h3, .section--encre p, .btn--clair { color: #232322 !important; }
 }
+
+/* Page 404 : le code d'erreur, discret au-dessus du titre. */
+.erreur-code { font-family: var(--font-mono); font-size: 0.75rem; color: var(--texte-doux); margin: 0 0 12px; }

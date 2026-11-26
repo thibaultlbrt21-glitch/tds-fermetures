@@ -28,7 +28,6 @@
   window.WEBLY_DEMARRE = true;
 
   var reduit = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var pointeurFin = window.matchMedia("(pointer: fine)").matches;
 
   var entete = document.getElementById("entete");
   var hero = document.querySelector(".hero");
@@ -174,14 +173,12 @@
   if (repere && !photos.length) repere.hidden = true;
   if (repere && photos.length) {
     var jaugePhotos = repere.querySelector(".hero__jauge");
-    var numPhoto = repere.querySelector(".hero__legende-num");
     var textePhoto = repere.querySelector(".hero__legende-texte");
     var creditPhoto = repere.querySelector(".hero__legende-credit");
     var pause = repere.querySelector(".hero__pause");
     var photoCourante = 0;
     var minuteur = null;
     var enPause = reduit;
-    var deux = function (n) { return String(n).padStart(2, "0"); };
 
     var traits = photos.map(function (photo, i) {
       var trait = document.createElement("button");
@@ -209,7 +206,6 @@
       traits.forEach(function (t, j) { t.setAttribute("aria-current", String(j === photoCourante)); });
       var photo = photos[photoCourante];
       charge(photos[(photoCourante + 1) % photos.length]);
-      numPhoto.textContent = deux(photoCourante + 1) + " / " + deux(photos.length);
       textePhoto.textContent = photo.getAttribute("data-legende") || "";
       creditPhoto.textContent = photo.getAttribute("data-credit") || "";
       creditPhoto.hidden = !creditPhoto.textContent;
@@ -245,33 +241,6 @@
 
     montrePhoto(0);
     relance();
-  }
-
-  /* ---------- Cartes en relief ---------- */
-  // Le basculement suit le curseur : c'est ce qui donne l'impression que la
-  // carte est un objet posé, pas une image. Désactivé au doigt et en
-  // mouvement réduit, où l'effet n'apporte rien.
-  // La carte n'est promue sur la carte graphique que pendant le survol.
-  if (pointeurFin && !reduit) {
-    document.querySelectorAll("[data-tilt]").forEach(function (carte) {
-      var cadre = null;
-      carte.addEventListener("pointermove", function (e) {
-        if (cadre) return;
-        cadre = window.requestAnimationFrame(function () {
-          cadre = null;
-          var r = carte.getBoundingClientRect();
-          var x = (e.clientX - r.left) / r.width - 0.5;
-          var y = (e.clientY - r.top) / r.height - 0.5;
-          carte.style.transform =
-            "perspective(900px) rotateY(" + (x * 7).toFixed(2) + "deg) rotateX(" +
-            (-y * 7).toFixed(2) + "deg) translateZ(6px)";
-        });
-      });
-      carte.addEventListener("pointerleave", function () {
-        if (cadre) { window.cancelAnimationFrame(cadre); cadre = null; }
-        carte.style.transform = "";
-      });
-    });
   }
 
   /* =========================================================

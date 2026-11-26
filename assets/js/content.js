@@ -131,11 +131,9 @@
     if (!Array.isArray(liste) || !liste.length) { videEtMasque(cible, document.getElementById("prestations")); return; }
 
     cible.textContent = "";
-    liste.forEach(function (m, i) {
+    liste.forEach(function (m) {
       var carte = el("article", "metier");
-      carte.setAttribute("data-tilt", "");
       var fond = el("div", "metier__profondeur");
-      fond.appendChild(el("span", "metier__num", String(i + 1).padStart(2, "0")));
       fond.appendChild(el("h3", null, m.titre || ""));
       if (rempli(m.texte)) fond.appendChild(el("p", null, m.texte));
       carte.appendChild(fond);
@@ -259,7 +257,6 @@
     cible.textContent = "";
     liste.forEach(function (d) {
       var carte = el("article", "metier");
-      carte.setAttribute("data-tilt", "");
       var fond = el("div", "metier__profondeur");
       fond.appendChild(el("span", "metier__num", d.sigle || ""));
       fond.appendChild(el("h3", null, d.titre || ""));
@@ -276,9 +273,8 @@
     if (!Array.isArray(liste) || !liste.length) { videEtMasque(cible, sectionDe(cible)); return; }
 
     cible.textContent = "";
-    liste.forEach(function (e, i) {
+    liste.forEach(function (e) {
       var etape = el("div", "etape");
-      etape.appendChild(el("span", "etape__num", "Étape " + String(i + 1).padStart(2, "0")));
       etape.appendChild(el("h3", null, e.titre || ""));
       if (rempli(e.texte)) etape.appendChild(el("p", null, e.texte));
       cible.appendChild(etape);
@@ -292,9 +288,8 @@
     if (!Array.isArray(liste) || !liste.length) { cible.textContent = ""; cible.hidden = true; return; }
 
     cible.textContent = "";
-    liste.forEach(function (g, i) {
+    liste.forEach(function (g) {
       var li = document.createElement("li");
-      li.appendChild(el("span", null, String(i + 1).padStart(2, "0")));
       var corps = document.createElement("div");
       corps.appendChild(el("strong", null, g.titre || ""));
       if (rempli(g.texte)) corps.appendChild(document.createTextNode(" " + g.texte));

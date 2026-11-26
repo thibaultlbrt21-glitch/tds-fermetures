@@ -11,7 +11,7 @@
       {
         "image": "assets/images/realisation-portail-coulissant.jpg",
         "alt": "Portail coulissant anthracite à lames verticales posé par TDS Fermetures devant une maison contemporaine",
-        "legende": "Portail coulissant — réalisation TDS Fermetures",
+        "legende": "Portail coulissant, réalisation TDS Fermetures",
         "credit": "",
         "cadrage": "66% 50%"
       },
@@ -36,9 +36,7 @@
     ]
   },
   "cartouche": {
-    "entreprise": "TDS Fermetures",
-    "metier": "Fermetures & automatismes",
-    "sav": "SAV réactif"
+    "entreprise": "TDS Fermetures"
   },
   "images": {
     "entreprise": "assets/logo/tds-fermetures.svg"
@@ -222,7 +220,7 @@
         "format": "paysage"
       }
     ],
-    "mention": "Portail coulissant : réalisation TDS Fermetures. Autres photos : FenêtréA, fabricant — modèles présentés à titre d'exemple."
+    "mention": "Portail coulissant : réalisation TDS Fermetures. Autres photos : FenêtréA, fabricant. Ce sont des modèles présentés à titre d'exemple."
   },
   "aides": {
     "titre": "Une TVA réduite sur vos travaux",
@@ -254,7 +252,7 @@
   },
   "entreprise": {
     "titre": "Un seul interlocuteur",
-    "paragraphe_1": "Chez TDS Fermetures, c'est le même interlocuteur que vous appelez pour un conseil, un devis ou le service après-vente — pas un standard.",
+    "paragraphe_1": "Chez TDS Fermetures, c'est le même interlocuteur que vous appelez pour un conseil, un devis ou le service après-vente, pas un standard.",
     "paragraphe_2": "Basée à Dijon, TDS Fermetures intervient dans toute la Côte-d'Or, avec la même exigence de pose pour chaque porte, fenêtre, volet ou portail."
   },
   "processus": {
@@ -304,7 +302,7 @@
   },
   "avis_titre": "Ce qu'en disent les clients",
   "avis": [],
-  "avis_note": "Avis recueillis auprès de clients réels — source indiquée sous chaque avis.",
+  "avis_note": "Avis recueillis auprès de clients réels. La source est indiquée sous chaque avis.",
   "infos": {
     "titre": "Nous joindre",
     "telephone": "06 58 00 82 26",
